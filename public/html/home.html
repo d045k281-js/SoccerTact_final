@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <base href="/"> 
+      <link rel="stylesheet" href="../css/style.css">
+  
+    </head>
+<body>
+    <div class="topnav">
+        <h1>SoccerTact</h1>
+        
+    
+
+
+  
+        <input type="button" id='script' name="submit"   onclick="passan()" value="Passes Analysis">
+        <img id="myImg" width="50%" height="50%">
+      </div>
+
+     
+      <scrip src="main.js">
+     
+      
+    </script>
+    <button onclick="play()" id="play">Play</button>
+
+    <div id="teamopt">
+    <div class="bp3-html-select .modifier">
+        <select :modifier id ="mySelect">
+          <option selected disabled style="text-align: center;">Select match</option>
+        
+    
+        </select>
+        <span class="bp3-icon bp3-icon-double-caret-vertical"></span>
+      </div>
+      <br></br>
+   
+    
+    </div>
+    <script>
+    
+       
+        function play1(){
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "/play", true);
+            	xhttp.send(); 
+    }
+
+   
+  
+   
+      setTimeout(team1, 0);
+     
+      async function team1(){
+      const response = await fetch('/json/44.json');
+      const names = await response.json();
+      for(i=0; i<32; i++){
+      var varhome=(names[i]["home_team"]["home_team_name"]); 
+      var varaway=names[i]["away_team"]["away_team_name"];
+      var id=names[i]["match_id"]
+      var teams=varhome+" vs "+varaway+" ,"+ id;
+ //     console.log(id);
+      var mySelect = document.getElementById('mySelect');
+        var newOption = document.createElement('option');
+    
+    newOption.value = teams;
+    
+    // Not all browsers support textContent (W3C-compliant)
+    // When available, textContent is faster (see http://stackoverflow.com/a/1359822/139010)
+    if (typeof newOption.textContent === 'undefined')
+    {
+        newOption.innerText = teams;
+    }
+    else
+    {
+        newOption.textContent = teams;
+    }
+      
+    
+    mySelect.appendChild(newOption);
+
+   
+    
+    }
+   
+       
+     
+      }
+      function play(){
+      var mySelect = document.getElementById('mySelect');
+    var namesteam=mySelect.options[mySelect.selectedIndex].value;
+        console.log(namesteam.split(",")[1])
+        console.log(namesteam);
+    var data = new FormData();
+data.append('id',namesteam.split(",")[1]);
+
+
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '/play', true);
+xhr.onload = function () {
+    // do something to response
+    console.log(this.responseText);
+};
+xhr.send(data);
+
+       window.location.href = "/loading"; 
+
+      }
+    </script>
+<script>
+ 
+    
+  </script>
+    
+
+</body>
+
+</html>
