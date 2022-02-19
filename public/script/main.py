@@ -1,4 +1,6 @@
-from shots import generate_shots
+from ShotMap import generate_ShotXg
+from pass_map import generate_pass
+
 import sys
 import requests
 import json
@@ -28,4 +30,8 @@ for i,event in events.iterrows():
 #t2 is second teams name
 #e_data is the event data for that match ID
 #l_data is the lineup data for that match ID
-generate_shots(m_id,t1,t2,e_data,l_data)
+generate_ShotXg(m_id,t1,t2,e_data,l_data)
+generate_pass(m_id,t1,t2,e_data,l_data)
+#Match KPI 
+
+#
