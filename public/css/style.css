@@ -1,54 +1,75 @@
-html { 
-    background: url(../images/background.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 30s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, red 50%,yellow 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-image:white;
+  border-radius:.25em;
+
+  box-sizing:border-box;
+  left:50%;
+  padding:25vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
   }
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+  100% {
+    transform:translateX(25%);
   }
-  
+}
   h1 {
-    -webkit-text-stroke: 1px green; 
-    font-family: Garamond, sans-serif;
+  
+    
     font-size: 2.5em;
-    color: white;
+    color: red;
     }
 
     .topnav {
 
         overflow: hidden;
         background-color: #0a1215;
-        background-image: url(../images/collage-removebg.png);
-        
+        background-image: white;
+        align-items: center;
+
       }
       
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        opacity: 0.3;
-      }
-      
-      .topnav a:hover {
-        color: black;
-      }
-      
-      .topnav a.active {
-        background-color: #04AA6D;
-        color: white;
-      }
 
 
       #play{
-        background: url(/images/grass.jpg) no-repeat;
+        background: white;
         cursor:pointer;
         border: none;
         height: 10%;
@@ -56,20 +77,54 @@ html {
         border-radius: 25px;
         font-family: Garamond, sans-serif;
         font-size: 2.5em;
-        color: white;
+        color: black;
+       border: 2px solid black;
     }
 
     #teamopt{
     position: fixed;
     top: 50%;
     left: 50%;
+    
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    background-color: white;
     }
 
  #mySelect{
    font-size: 2.5em;
+   border: 2px solid black;
+  /* <!-- border-radius: 25px; */
  }
+ @media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  p a, p a:visited { color: #444 !important; text-decoration: underline; }
+  p a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+  .hide-on-print { display: none !important; }
+  .print-only { display: block !important; }
+}
+ footer {
+	text-align: left;
+	color: #333;
+	font-family: "Times New Roman";
+	font-size: 20px;
+	padding: 10px 10px 10px 10px;
+	position: fixed;
+	bottom: 0;
+	background: white;
+
+	border: 2px groove darkgrey;
+	width: 500px;
+}
  .container{
   display: flex;
   text-align: center;
@@ -108,18 +163,22 @@ html {
   display: flex;
   justify-content: space-between;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .home_team_select{
  overflow: auto;
- left: 0px;
+
  font-size: 20px;
- width: auto;
- height: 100%;
+ width: 25vw;
+ height:auto;
  color: white;
  background-color: #0a1215;
  border: 2px solid white;
+
  
 }
 
@@ -128,12 +187,24 @@ html {
  overflow: auto;
  right: 0px;
  font-size: 20px;
- width: auto;
- height: 100%;
+ width: 25vw;
+ height: auto;
  color: white;
  background-color: #0a1215;
  border: 2px solid white;
 }
+#away_players{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home_players{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+option{ border: 1px solid white;}
 .players_select:active, select:hover {
   outline: none
 }

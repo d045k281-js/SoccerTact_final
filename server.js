@@ -3,11 +3,14 @@
 const homepage = './public/html/home.html';
 const teampage = './public/html/welcome.html';
 const loader = './public/html/loader.html';
+const plyloader = './public/html/plyloader.html';
+const player = './public/html/player.html';
 const {spawn} = require('child_process'); 
 var fs = require('fs');
 var url = require('url');
 //var fs = require('fs');
 var express = require('express');
+var saveme;
 
 //http.createServer(routes.handleRequests).listen(port);
 
@@ -36,7 +39,17 @@ app.get('/', (req, res) => {
                                             res.writeHead(200, {'Content-Type': 'text/html'});
                                                              renderHTML(loader, res);
                                             
-                                                            });                                 
+                                                            });           
+                                                            app.get('/plyloading', (req, res) => { 
+                                                                res.writeHead(200, {'Content-Type': 'text/html'});
+                                                                                 renderHTML(plyloader, res);
+                                                                
+                                                                                });   
+                                                                                app.get('/player', (req, res) => { 
+                                                                                    res.writeHead(200, {'Content-Type': 'text/html'});
+                                                                                                     renderHTML(player, res);
+                                                                                    
+                                                                                                    });                                                       
  const multer = require('multer');
 const upload = multer();
 
@@ -45,7 +58,17 @@ app.post('/play', upload.none(), (req, res) => {
 		//console.log(data)
         const formData = req.body;
         const data=formData.id;
-        console.log(data)
+    
+        let match = { 
+            id:data
+        };
+         
+        let data2 = JSON.stringify(match);
+        fs.writeFile('./public/analysis/matchid.json', data2, (err) => {
+            if (err) throw err;
+             console.log('Data written to file');
+         });
+       
         spawn('python', ['./public/script/shots.py', data]);
         spawn('python', ['./public/script/lineup.py', data]);
         console.log("running script!")
@@ -55,6 +78,27 @@ app.post('/play', upload.none(), (req, res) => {
 	res.status(200).json({ 
 		message: "JSON Data received successfully" 
 	}); 
+});
+
+app.post('/plyload', upload.none(), (req, res) => { 
+    
+    //console.log(data)
+    
+
+    const formData = req.body;
+    const data=formData.plyname;
+    //const data=formData.plyname;
+    const data2=formData.id;
+   // console.log(saveme);
+    console.log(String(data)+ data2);
+    spawn('python', ['./public/script/player_analysis.py', data2, data]);
+    spawn('python',['./public/script/img.py', data+" headshot"]);
+   
+    //console.log("running script!")
+   // res.sendStatus(200);
+
+// do something with that data (write to a DB, for instance) 
+
 });
 
 

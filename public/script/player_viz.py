@@ -31,7 +31,7 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
     
     
     pitch = Pitch(pitch_type='statsbomb',axis=True, label=True,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
-    fig, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
+    fig3, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
     # get the nested structure into a dataframe 
     # store the dataframe in a dictionary with the match id as key (remove '.json' from string)
 
@@ -99,11 +99,11 @@ def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     
     hexmap = pitch.hexbin(df.x, df.y, ax=ax, edgecolors='#f4f4f4',
                       gridsize=(8, 8), cmap=flamingo_cmap)
-    plt.show()
+    fig.savefig('./public/analysis/plposs.png')
     
 def generate_Shots(m_id,t1,t2,e_data,l_data, name):
     pitch = VerticalPitch(half = True, pitch_type='statsbomb',axis=True, label=True,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
-    fig, ax = pitch.draw(figsize=(8, 6), constrained_layout=False, tight_layout=True) 
+    fig2, ax = pitch.draw(figsize=(8, 6), constrained_layout=False, tight_layout=True) 
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
     df_new = df.loc[df['type_name'] == 'Shot'].set_index('id')
@@ -134,5 +134,5 @@ def generate_Shots(m_id,t1,t2,e_data,l_data, name):
             shotCircle2= pitch.scatter(event['x'], event['y'], marker='football', s= circleSize, ax=ax)     
             
     ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
-    plt.show()
-
+    fig2.savefig('./public/analysis/genshot.png')
+  

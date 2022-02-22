@@ -56,8 +56,8 @@ for i,shots in t1_shots.iterrows():
     ax1.add_patch(shotCircle)
 
 fig1.set_size_inches(10, 7)
-#plt.show()
-fig1.savefig('./public/analysis/home.png')
+fig1.show()
+# fig1.savefig('./public/analysis/home.png')
 
 (fig2,ax2) = createPitch(pitchLengthX,pitchWidthY,'yards','gray')
 for i,shots in t2_shots.iterrows():
@@ -76,5 +76,5 @@ for i,shots in t2_shots.iterrows():
 
 fig2.set_size_inches(10, 7)
 #fig.savefig('Output/passes.pdf', dpi=100)
-#plt.show()
-fig2.savefig('./public/analysis/away.png')
+fig2.show()
+# fig2.savefig('./public/analysis/away.png')

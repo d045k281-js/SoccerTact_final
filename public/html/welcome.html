@@ -6,28 +6,31 @@
     
   </div>
 <body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
     
   
       <div class=”container”>
      
-            <div class="topnav">
+            
                 <h1>SoccerTact</h1>
                 
-              </div>
+            <div>
               <div style="display: flex; justify-content: space-between;" class="player_select">
                 <div>
-                <select style="background-color:rgba(0, 0, 0, 0.5);"class="home_team_select" id="home_team_select">
-                  <option style="background-color: darkslateblue; color: white;"id="home_players" selected disabled>Home Team</option>
+                <select style="background-color:rgba(0, 0, 0, 0.5); width: 400px; text-align-last:center;"class="home_team_select" id="home_team_select">
+                  <option style="background-color: red; color: white;"id="home_players" selected disabled>Home Team</option>
                   
                 </select>
                 
                 </div>
                 
-          <div style="margin-top:10%"><img id="myImg" width="60%" ></div>
+                  <div style="margin-top:5% "><img id="myImg" width="60%"   ></div>
       
                 <div>
-                <select style="background-color:rgba(0, 0, 0, 0.5);"class="away_team_select" id="away_team_select">
-                  <option  style="background-color: darkslateblue; color: white;"id="away_players" selected disabled>Away Team</option>
+                <select style="background-color:rgba(0, 0, 0, 0.5); width: 400px; text-align-last:center;"class="away_team_select" id="away_team_select">
+                  <option  style="background-color: red; color: white; "id="away_players" selected disabled>Away Team</option>
                 </select>
                 </div>
               </div>
@@ -58,14 +61,14 @@ img.onerror = function(e) {
         const response = await fetch("../analysis/home_line.json");
         const players = await response.json();
         let home_players_data = players;
-        console.log(home_players_data);
+        // console.log(home_players_data);
         for (i = 0; i < home_players_data.length; i++) {
           //console.log(i)
           var mySelect = document.getElementById("home_team_select");
           mySelect.setAttribute("size", mySelect.childElementCount);
           var newOption = document.createElement("option");
           newOption.value = home_players_data[i];
-          console.log(home_players_data[i]);
+          // console.log(home_players_data[i]);
           if (typeof newOption.textContent === "undefined") {
             newOption.innerText = home_players_data[i];
           } else {
@@ -79,7 +82,7 @@ img.onerror = function(e) {
         const response = await fetch("../analysis/away_line.json");
         const players = await response.json();
         let away_players_data = players;
-        console.log(away_players_data);
+        // console.log(away_players_data);
         for (i = 0; i < away_players_data.length; i++) {
           var mySelect = document.getElementById("away_team_select");
           mySelect.setAttribute("size", mySelect.childElementCount);
@@ -94,6 +97,47 @@ img.onerror = function(e) {
          
         }
       }
+      var data = new FormData();
+     
+     
+      document.getElementById("home_team_select").addEventListener('change', (event) => {
+      //   
+      async function homeply(){
+    
+      const response = await fetch('/analysis/matchid.json');
+      const names = await response.json();
+      var id= names["id"];
+    
+        var mySelect = document.getElementById('home_team_select');
+        var namesteam=mySelect.options[mySelect.selectedIndex].value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/plyload', true);
+        data.append('plyname',namesteam);
+        data.append('id', id);
+        console.log(namesteam);
+        xhr.send(data);
+        }
+        setTimeout(homeply, 0);
+        window.location.href = "/plyloading";
+      });
+      document.getElementById("away_team_select").addEventListener('change', (event) => {
+        //
+        async function awayply(){
+    
+    const response = await fetch('/analysis/matchid.json');
+    const names = await response.json();
+    var id= names["id"];
+        var mySelect = document.getElementById('away_team_select');
+        var namesteam=mySelect.options[mySelect.selectedIndex].value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/plyload', true);
+        data.append('plyname',namesteam);
+        data.append('id', id);
+        console.log(namesteam);
+        xhr.send(data);
+      } setTimeout(awayply, 0);
+        window.location.href = "/plyloading";
+       });
      </script>
 </body>
 

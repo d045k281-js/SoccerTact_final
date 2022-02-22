@@ -3,17 +3,15 @@
     <head>
       <base href="/"> 
       <link rel="stylesheet" href="../css/style.css">
-  
+      <h1 style="align-items: center; margin: auto ;">SoccerTact</h1>
     </head>
 <body>
-    <div class="topnav">
-        <h1>SoccerTact</h1>
-        
+    
+       
+       
     
 
 
-  
-        <input type="button" id='script' name="submit"   onclick="passan()" value="Passes Analysis">
         <img id="myImg" width="50%" height="50%">
       </div>
 
@@ -22,21 +20,26 @@
      
       
     </script>
-    <button onclick="play()" id="play">Play</button>
-
-    <div id="teamopt">
-    <div class="bp3-html-select .modifier">
-        <select :modifier id ="mySelect">
-          <option selected disabled style="text-align: center;">Select match</option>
-        
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
     
-        </select>
-        <span class="bp3-icon bp3-icon-double-caret-vertical"></span>
+      
+    <div class="content">
+      <div class="bp3-html-select .modifier">
+          <select :modifier id ="mySelect">
+            <option selected disabled style="text-align: center;">Select match</option>
+          
+            
+          </select><br><br>
+          <button onclick="play()" id="play">Play</button>
+          <span class="bp3-icon bp3-icon-double-caret-vertical"></span>
+        </div>
+        <br></br>
+       
       </div>
-      <br></br>
-   
-    
-    </div>
+ 
+
     <script>
     
        
@@ -102,8 +105,14 @@ xhr.onload = function () {
     console.log(this.responseText);
 };
 xhr.send(data);
-
-       window.location.href = "/loading"; 
+//xhr.open('POST', '/plyload', true);
+// xhr.send(data);
+        if(namesteam=="Select match"){
+          alert("Choose the team first!");
+        }
+        else{
+       window.location.href = "/loading";
+        } 
 
       }
     </script>
@@ -114,5 +123,7 @@ xhr.send(data);
     
 
 </body>
+
+
 
 </html>

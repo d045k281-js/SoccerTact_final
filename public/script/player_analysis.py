@@ -5,8 +5,6 @@ Created on Wed Feb  9 14:47:06 2022
 
 @author: atifsiddiqui
 """
-
-from shots import generate_shots
 from player_viz import generate_passMap, generate_possesion, generate_Shots
 import sys
 import requests

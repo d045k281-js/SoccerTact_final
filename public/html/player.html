@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <base href="/"> 
+      <link rel="stylesheet" href="../css/style.css">
+      <h1 style="align-items: center; margin: auto ;">SoccerTact</h1>
+      <img id="plyimg" style="height: 10%; width: 10%;">
+    </head>
+<body>
+    
+       
+       
+    
+
+
+        
+      </div>
+
+     
+      <scrip src="main.js">
+ 
+    </script>
+    <script>
+       async function awayply(){
+    
+    const response = await fetch('/analysis/data.json');
+    const names = await response.json();
+    var id= names;
+    console.log(id);
+    document.getElementById("plyimg").src=names;
+       }
+       setTimeout(awayply, 0);
+       
+    </script>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    
+      
+    <div class="content">
+   
+        <div style="margin-top:5% "><img id="myImg" style="height: 60%; width: 60%;"  ></div>
+       
+      </div>
+ 
+
+<script>
+   var img= document.getElementById("myImg");
+        img.src="../analysis/plposs.png";
+
+img.onload = function(e){
+    
+};
+
+img.onerror = function(e) {
+  window.location.href='/loading';
+};
+
+    
+  </script>
+    
+
+</body>
+
+
+
+</html>
