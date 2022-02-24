@@ -10,7 +10,7 @@ away_team_required ="Liverpool"
 file_name=str(match_id_required)+'.json'
 
 import json
-with open('C:/Users/fares/OneDrive/Documentos/eecs 582/project/SoccerTact/'+file_name) as data_file:
+with open('C:/Users/fares/Documents/eecs 582/project/SoccerTact/'+file_name) as data_file:
     #print (mypath+'events/'+file)
     data = json.load(data_file)
     
@@ -42,6 +42,16 @@ for i, events in real_data.iterrows():
     elif (events['type_name'] =='Half Start'):
         eventNames.append('Kick-Off') 
         minute.append(events['minute'])
+    elif (events['type_name'] =='Foul Committed'):
+        if (events['foul_committed_card_name'] == "Yellow Card"):
+            name = 'Yellow Card\n'+ events['player_name']
+            eventNames.append(name) 
+            minute.append(events['minute'])
+        elif (events['foul_committed_card_name'] == "Red Card"):
+            name = 'Red Card\n'+ events['player_name']
+            eventNames.append(name) 
+            minute.append(events['minute'])
+
 
 print (eventNames)
 dates = ['0' , '45', '90']
