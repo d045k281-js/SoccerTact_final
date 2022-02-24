@@ -92,7 +92,7 @@ app.post('/plyload', upload.none(), (req, res) => {
    // console.log(saveme);
     console.log(String(data)+ data2);
     spawn('python', ['./public/script/player_analysis.py', data2, data]);
-    spawn('python',['./public/script/img.py', data+" headshot"]);
+    spawn('python',['./public/script/img.py', data+" soccer headshot"]);
    
     //console.log("running script!")
    // res.sendStatus(200);
