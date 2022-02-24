@@ -80,7 +80,7 @@ app.post('/play', upload.none(), (req, res) => {
 	}); 
 });
 
-app.post('/plyload', upload.none(), (req, res) => { 
+app.post('/plyloading', upload.none(), (req, res) => { 
     
     //console.log(data)
     
