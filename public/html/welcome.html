@@ -111,7 +111,7 @@ img.onerror = function(e) {
         var mySelect = document.getElementById('home_team_select');
         var namesteam=mySelect.options[mySelect.selectedIndex].value;
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/plyload', true);
+        xhr.open('POST', '/plyloading', true);
         data.append('plyname',namesteam);
         data.append('id', id);
         console.log(namesteam);
