@@ -48,9 +48,6 @@
           xhttp.open("GET", "/play", true);
             	xhttp.send(); 
     }
-
-   
-  
    
       setTimeout(team1, 0);
      
@@ -92,10 +89,17 @@
       function play(){
       var mySelect = document.getElementById('mySelect');
     var namesteam=mySelect.options[mySelect.selectedIndex].value;
-        console.log(namesteam.split(",")[1])
-        console.log(namesteam);
+    var teamname=mySelect.options[mySelect.selectedIndex].value;
+        console.log(namesteam.split(",")[1]);
+        var hometeam =namesteam.split(" vs ")[0];
+  
+       
+        var awayteam=namesteam.split(" vs ")[1].split(" ,")[0];
+        
     var data = new FormData();
 data.append('id',namesteam.split(",")[1]);
+data.append('home',hometeam);
+data.append('away', awayteam);
 
 
 var xhr = new XMLHttpRequest();
@@ -105,8 +109,8 @@ xhr.onload = function () {
     console.log(this.responseText);
 };
 xhr.send(data);
-//xhr.open('POST', '/plyload', true);
-// xhr.send(data);
+xhr.open('POST', '/plyload', true);
+xhr.send(data);
         if(namesteam=="Select match"){
           alert("Choose the team first!");
         }
