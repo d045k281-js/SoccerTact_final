@@ -68,6 +68,9 @@ body {
 
       }
       
+    .SoccerTact_Logo{
+      background-image: url(../images/SoccerTact_logo.png);
+    }
 
       .play{
         background: white;
@@ -497,5 +500,5 @@ option{ border: 1px solid white;}
 .analysis_buttons{
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
