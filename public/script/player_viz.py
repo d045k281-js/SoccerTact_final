@@ -74,7 +74,7 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
 
 # Set the title
     ax.set_title(f'{name_req} passes vs {t2}', fontsize=10)
-    plt.show()
+    fig3.savefig('./public/analysis/passmap.png')
 
 def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     flamingo_cmap = LinearSegmentedColormap.from_list("Flamingo - 10 colors",
