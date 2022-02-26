@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <head>
   <link rel="stylesheet" href="../css/style.css">
     
@@ -16,24 +16,37 @@
             
                 <h1>SoccerTact</h1>
                 
-        
+            <div>
               <div style="display: flex; justify-content: space-between;" class="player_select">
                 <div>
-                <select style="background-color:rgba(0, 0, 0, 0.5); width: 400px; text-align-last:center;"class="home_team_select" id="home_team_select">
+                  <div class="logo_name">
+                  <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Home Team</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" style="height: 80px; width: 80px;"> 
+                </div>
+                <select style="background-color:rgba(0, 0, 0, 0.5); width: 320px; text-align-last:center;"class="home_team_select" id="home_team_select">
                   <option style="background-color: red; color: white;"id="home_players" selected disabled>Home Team</option>
                   
                 </select>
                 
                 </div>
                 
-                  <div style="margin-top:5% "><img id="myImg" width="60%"   ></div>
+                  <div style="margin-top:5% "><img id="myImg" width="300px"   ></div>
       
                 <div>
-                <select style="background-color:rgba(0, 0, 0, 0.5); width: 400px; text-align-last:center;"class="away_team_select" id="away_team_select">
+                  <div class="logo_name">
+                    <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Away Team</h4> 
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/real-madrid-c-f-logo-png-transparent.png" style="height: 80px; width: 80px;">
+                    </div> 
+                <select style="background-color:rgba(0, 0, 0, 0.5); width: 320px; text-align-last:center;"class="away_team_select" id="away_team_select">
                   <option  style="background-color: red; color: white; "id="away_players" selected disabled>Away Team</option>
                 </select>
                 </div>
-              
+              </div>
+              <div class="analysis_buttons">
+                <button class="button-75">Pass Analysis</button>
+                <button class="button-75">Shot Analysis</button>
+                <button class="button-75">Show Heatmap</button>
+              </div> 
     
       </div>
 
@@ -52,7 +65,6 @@ img.onload = function(e){
 img.onerror = function(e) {
   window.location.href='/loading';
 };
-
 
        console.log("heloo")
     setTimeout(homePlayers, 0.01);
@@ -139,6 +151,4 @@ img.onerror = function(e) {
        });
      </script>
 </body>
-
-
 </html>

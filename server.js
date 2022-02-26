@@ -50,7 +50,8 @@ app.post("/play", upload.none(), (req, res) => {
   //console.log(data)
   const formData = req.body;
   const data = formData.id;
-
+  const home=formData.home;
+  const away=formData.away;
   let match = {
     id: data,
   };

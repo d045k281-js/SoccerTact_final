@@ -1,4 +1,4 @@
-html {
+html { 
   height:100%;
 }
 
@@ -41,7 +41,6 @@ body {
 }
 
 
-
 @keyframes slide {
   0% {
     transform:translateX(-25%);
@@ -66,7 +65,6 @@ body {
 
       }
       
-
 
       #play{
         background: white;
@@ -113,17 +111,17 @@ body {
   .print-only { display: block !important; }
 }
  footer {
-	text-align: left;
-	color: #333;
-	font-family: "Times New Roman";
-	font-size: 20px;
-	padding: 10px 10px 10px 10px;
-	position: fixed;
-	bottom: 0;
-	background: white;
+  text-align: left;
+  color: #333;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  padding: 10px 10px 10px 10px;
+  position: fixed;
+  bottom: 0;
+  background: white;
 
-	border: 2px groove darkgrey;
-	width: 500px;
+  border: 2px groove darkgrey;
+  width: 500px;
 }
  .container{
   display: flex;
@@ -168,7 +166,6 @@ body {
   align-items: center;
 }
 
-
 .home_team_select{
  overflow: auto;
 
@@ -181,7 +178,6 @@ body {
 
  
 }
-
 
 .away_team_select{
  overflow: auto;
@@ -210,4 +206,68 @@ option{ border: 1px solid white;}
 }
 .players_select:active, select:hover {
   outline-color: red
+}
+
+.logo_name{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-75 {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Codec cold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-75:active {
+  outline: 0;
+}
+
+.button-75:hover {
+  outline: 0;
+}
+
+.button-75 span {
+  transition: all 200ms;
+}
+
+.button-75:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+  .button-75 {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .button-75 span {
+    line-height: 50px;
+  }
+}
+
+.analysis_buttons{
+  display: flex;
+  justify-content: center;
 }
