@@ -217,9 +217,82 @@ option{ border: 1px solid white;}
   flex-direction: column;
   align-items: center;
 }
+.five {
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 20px 50px 20px 70px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.five:hover {
+  background-position: 0% 30%;
+}
+.five:hover:after {
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.five:before, .five:after {
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.five:before {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.five:after {
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+.five {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #21960a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3fdb2b), to(rgba(154, 40, 87, 0.24))), url("https://cdn.vox-cdn.com/thumbor/avciGramUJ8ljFGsKgmiBxShiS8=/0x0:3052x1934/1200x800/filters:focal(1282x723:1770x1211)/cdn.vox-cdn.com/uploads/chorus_image/image/55470069/669120050.0.jpg");
+  background-image: linear-gradient(to bottom, #40b91b, rgba(154, 40, 87, 0.24)), url("https://cdn.vox-cdn.com/thumbor/avciGramUJ8ljFGsKgmiBxShiS8=/0x0:3052x1934/1200x800/filters:focal(1282x723:1770x1211)/cdn.vox-cdn.com/uploads/chorus_image/image/55470069/669120050.0.jpg");
+}
+.five:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #58b818;
+}
+.five:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.five:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.five:after, .five:before {
+  content:icon;
+}
+.five b {
+  color: #F764FF;
+  font-weight: 700;
+}
 .button-75 {
   align-items: center;
-  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  background-image: linear-gradient(135deg, #fa0955 40%, #fc894d);
   border: 0;
   border-radius: 10px;
   box-sizing: border-box;
