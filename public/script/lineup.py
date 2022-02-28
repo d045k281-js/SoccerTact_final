@@ -1,9 +1,7 @@
 """
 Created on Sun Feb  6 17:08:54 2022
-
 @author: atifsiddiqui
 """
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -11,7 +9,6 @@ import sys
 from pandas.io.json import json_normalize
 import json
 import requests
-
 m_id = sys.argv[1]
 
 to_fetch = m_id+'.json'

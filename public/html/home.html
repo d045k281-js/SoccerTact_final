@@ -50,11 +50,14 @@
           xhttp.open("GET", "/play", true);
             	xhttp.send(); 
     }
+
+   
+  
    
       setTimeout(team1, 0);
      
       async function team1(){
-      const response = await fetch('/json/44.json');
+      const response = await fetch('/json/1.json');
       const names = await response.json();
       for(i=0; i<32; i++){
       var varhome=(names[i]["home_team"]["home_team_name"]); 
@@ -91,18 +94,17 @@
       function play(){
       var mySelect = document.getElementById('mySelect');
     var namesteam=mySelect.options[mySelect.selectedIndex].value;
-    var teamname=mySelect.options[mySelect.selectedIndex].value;
-        console.log(namesteam.split(",")[1]);
-        var hometeam =namesteam.split(" vs ")[0];
+        console.log(namesteam.split(",")[1])
+        console.log(namesteam);
+         var hometeam =namesteam.split(" vs ")[0];
   
        
-        var awayteam=namesteam.split(" vs ")[1].split(" ,")[0];
-        
+  var awayteam=namesteam.split(" vs ")[1].split(" ,")[0];
     var data = new FormData();
+    var data2=new FormData();
 data.append('id',namesteam.split(",")[1]);
-data.append('home',hometeam);
+data.append('home', hometeam);
 data.append('away', awayteam);
-
 
 var xhr = new XMLHttpRequest();
 xhr.open('POST', '/play', true);
@@ -111,8 +113,7 @@ xhr.onload = function () {
     console.log(this.responseText);
 };
 xhr.send(data);
-xhr.open('POST', '/plyload', true);
-xhr.send(data);
+
         if(namesteam=="Select match"){
           alert("Choose the team first!");
         }

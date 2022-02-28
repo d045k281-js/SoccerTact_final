@@ -23,7 +23,7 @@
                 <div>
                   <div class="logo_name">
                   <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Home Team</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" style="height: 80px; width: 80px;"> 
+                <img  id="logohome" style="height: 80px; width: 80px; border: 5px solid red;"> 
                 </div>
                 <select style="background-color:rgba(0, 0, 0, 0.5); width: 320px; text-align-last:center;"class="home_team_select" id="home_team_select">
                   <option style="background-color: red; color: white;"id="home_players" selected disabled>Home Team</option>
@@ -37,10 +37,10 @@
                 <div>
                   <div class="logo_name">
                     <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Away Team</h4> 
-                    <img src="https://cdn.freebiesupply.com/logos/large/2x/real-madrid-c-f-logo-png-transparent.png" style="height: 80px; width: 80px;">
+                    <img id="logoaway" style="height: 80px; width: 80px; border: 5px solid gold">
                     </div> 
                 <select style="background-color:rgba(0, 0, 0, 0.5); width: 320px; text-align-last:center;"class="away_team_select" id="away_team_select">
-                  <option  style="background-color: red; color: white; "id="away_players" selected disabled>Away Team</option>
+                  <option  style="background-color: gold; color: white; "id="away_players" selected disabled>Away Team</option>
                 </select>
                 </div>
               </div>
@@ -55,7 +55,25 @@
      
 
      <script>
-       
+        async function homeply(){
+    
+    const response = await fetch('/analysis/homeimg.json');
+    const names = await response.json();
+    var id= names;
+    console.log(id);
+    document.getElementById("logohome").src=names;
+       }
+
+      setTimeout(homeply, 0);
+      async function awayply(){
+    
+    const response = await fetch('/analysis/awayimg.json');
+    const names = await response.json();
+    var id= names;
+    console.log(id);
+    document.getElementById("logoaway").src=names;
+       }
+       setTimeout(awayply, 0);
 
         var img= document.getElementById("myImg");
         img.src="../analysis/home.png";
