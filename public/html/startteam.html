@@ -30,23 +30,50 @@
     <div class="bg bg3"></div>
     
       
-    <div class="content">
-      <div class="bp3-html-select .modifier">
-        <br></br>
-          <select :modifier id ="mySelect">
-            <option selected disabled style="text-align: center;">Select match</option>
+    <div class="content" style="  display: flex;">
+ 
+            <div class="logo1" style=" float:right; " >
+         
           
-            
-          </select><br><br>
-          <button onclick="play()" class="play">Play</button>
-          <span class="bp3-icon bp3-icon-double-caret-vertical"></span>
-        </div>
-        <br></br>
-       
+          <img  id="logohome" style="height: 150px; width: 150px; border: 5px solid red;"> 
+          <h4 style="color: black; margin: 0%; margin-bottom: 5px; font-size: 30px;">Home Team</h4>
+          
+          </div>
+          <div class="logo2" style=" float:left; margin-left: 10%; margin-right: 10%;" >
+            <h4 style="color: white;  font-size: 50px; font-family: fantasy;">VS</h4> 
+            </div> 
+          <div class="logo2" style=" float:left; " >
+           
+         
+          <img id="logoaway" style="height: 150px; width: 150px; border: 5px solid gold">
+          <h4 style="color: black; margin: 0%; margin-bottom: 5px; font-size: 30px;  ">Away Team</h4> 
+            </div> 
+ 
       </div>
  
 
     <script>
+          async function homeply(){
+    
+    const response = await fetch('/analysis/homeimg.json');
+    const names = await response.json();
+    var id= names;
+    console.log(id);
+    document.getElementById("logohome").src=names;
+       }
+
+      setTimeout(homeply, 0);
+      async function awayply(){
+    
+    const response = await fetch('/analysis/awayimg.json');
+    const names = await response.json();
+    var id= names;
+    console.log(id);
+    document.getElementById("logoaway").src=names;
+       }
+       setTimeout(awayply, 0);
+
+       
     
     
         function play1(){

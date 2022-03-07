@@ -76,8 +76,8 @@ body {
         background: white;
         cursor:pointer;
         border: none;
-        height: 10%;
-        width: 50%;
+        height: 100%;
+        width: 100%;
         border-radius: 25px;
         font-family: Garamond, sans-serif;
         font-size: 2.5em;
@@ -152,6 +152,7 @@ body {
  #mySelect{
    font-size: 2.5em;
    border: 2px solid black;
+   width: 100%;
   /* <!-- border-radius: 25px; */
  }
  @media print {
