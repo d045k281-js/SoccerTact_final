@@ -12,7 +12,7 @@ away_team_required ="Barcelona"
 file_name=str(match_id_required)+'.json'
 
 import json
-with open('C:/Users/fares/Documents/eecs 582/project/582/SoccerTact_final/data/events/'+file_name, encoding="utf-8") as data_file:
+with open('../data/data/events/'+file_name, encoding="utf-8") as data_file:
     #print (mypath+'events/'+file)
     data = json.load(data_file)
     
@@ -81,19 +81,19 @@ markerline, stemline, baseline = ax.stem(minute, levels)
 #markerline.set_ydata(np.zeros(len(dates)))
 
 # annotate lines
-sb = plt.imread('soccer-ball.png') 
+sb = plt.imread('../images/soccer-ball.png') 
 goal = OffsetImage(sb, zoom=0.04)
 goal.image.axes = ax
-ko = plt.imread('kickoff.png') 
+ko = plt.imread('../images/kickoff.png') 
 kick =  OffsetImage(ko, zoom=0.03)
 kick.image.axes = ax
-s = plt.imread('substitution.jpg') 
+s = plt.imread('../images/substitution.jpg') 
 sub =  OffsetImage(s, zoom=0.03)
 sub.image.axes = ax
-yc = plt.imread('Yellowcard.png') 
+yc = plt.imread('../images/Yellowcard.png') 
 yellow =  OffsetImage(yc, zoom=0.01)
 yellow.image.axes = ax
-rc = plt.imread('Redcard.png') 
+rc = plt.imread('../images/Redcard.png') 
 red =  OffsetImage(rc, zoom=0.01)
 red.image.axes = ax
 
