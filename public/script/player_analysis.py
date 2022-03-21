@@ -6,6 +6,7 @@ Created on Wed Feb  9 14:47:06 2022
 @author: atifsiddiqui
 """
 from player_viz import generate_passMap, generate_possesion, generate_Shots, generatePlayerKPI
+from scrapper import scrapeInfo 
 import sys
 import requests
 import json
@@ -39,3 +40,4 @@ generate_passMap(m_id, t1 ,t2, e_data,l_data, player_name)
 generate_possesion(m_id,t1,t2,e_data,l_data, player_name)
 generate_Shots(m_id,t1,t2,e_data,l_data, player_name)
 generatePlayerKPI(m_id,t1,t2,e_data,l_data, player_name)
+scrapeInfo(player_name)
