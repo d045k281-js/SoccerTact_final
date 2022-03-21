@@ -4,12 +4,13 @@ import bs4
 import json
 import sys
 
-text= "Lionel Messi"
-
-soup = bs4.BeautifulSoup(text, "html")
+text = str(sys.argv[1])
+url = 'https://en.wikipedia.org/wiki/' + text
+request_result=requests.get(url)
+soup = bs4.BeautifulSoup(request_result.text, "html")
 
 #print(soup.prettify())
-tbl=soup.find('table', id="datatable_main")
+tbl = soup.find('div', {'class': 'mw-parser-output'})
 list_of_table_rows = tbl.findAll('tr')
 info = {}
 for tr in list_of_table_rows:
@@ -27,16 +28,22 @@ for tr in list_of_table_rows:
                     innerText += '\n'
             info[th.text] = innerText
 
-print(json.dumps(info, indent=1))
+#print(json.dumps(info, indent=1))
 
 Name = info["Full name"].strip('[1]')
 Birth = info["Date of birth"]
 DOB = Birth[12:24] 
 Age = Birth[29:31]
 Height = info["Height"]
-hei = Height[8:17]
+h = Height[-60:9]
+hei = h.replace(u'\xa0', u' ')
 pos = info['Position(s)']
 team = info["Current team"]
 num = info["Number"]
 
 player_info = [Name, DOB, Age, hei, pos, team, num]
+
+jsonString = json.dumps(player_info)
+jsonFile = open("/Users/atifsiddiqui/Desktop/soccerTact/data.json", "w")
+jsonFile.write(jsonString)
+jsonFile.close()
