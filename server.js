@@ -1,11 +1,13 @@
 //const app = express()
 const homepage = "./public/html/home.html";
-const teampage = "./public/html/welcome.html";
+const ateampage = "./public/html/hometeam.html";
+const hteampage = "./public/html/awayteam.html";
 const loader = "./public/html/loader.html";
 const plyloader = "./public/html/plyloader.html";
 const player = "./public/html/player.html";
 const start="./public/html/startteam.html"
 const { spawn } = require("child_process");
+const teamloader= "./public/html/teamloader.html"
 var fs = require("fs");
 var url = require("url");
 //var fs = require('fs');
@@ -29,9 +31,13 @@ app.get("/", (req, res) => {
 
 });
 
-app.get("/team", (req, res) => {
+app.get("/team1", (req, res) => {
   res.writeHead(200, { "Content-Type": "text/html" });
-  renderHTML(teampage, res);
+  renderHTML(ateampage, res);
+});
+app.get("/team2", (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  renderHTML(hteampage, res);
 });
 app.get("/loading", (req, res) => {
   res.writeHead(200, { "Content-Type": "text/html" });
@@ -48,6 +54,10 @@ app.get("/player", (req, res) => {
 app.get("/start", (req, res) => {
   res.writeHead(200, { "Content-Type": "text/html" });
   renderHTML(start, res);
+});
+app.get("/teamloader", (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  renderHTML(teamloader, res);
 });
 const multer = require("multer");
 const upload = multer();
@@ -70,7 +80,7 @@ app.post("/play", upload.none(), (req, res) => {
     if (err) throw err;
     console.log("Data written to file");
   });
-
+  console.log(data)
   spawn("python", ["./public/script/shots.py", data]);
   spawn("python", ["./public/script/lineup.py", data]);
   spawn("python", ["./public/script/homeimg.py", home + " logo transparent"]);

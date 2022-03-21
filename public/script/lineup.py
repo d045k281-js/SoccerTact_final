@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import sys
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 import json
 import requests
 m_id = sys.argv[1]
@@ -25,13 +25,13 @@ Awaynames = [nm['player_name'] for nm in away_team_lineup]
 
 
 json_string = json.dumps(Homenames, ensure_ascii=False)
-jsonFile = open("home_line.json", "w")
+jsonFile = open("./public/analysis/home_line.json", "w",encoding="utf-8")
 jsonFile.write(json_string)
 jsonFile.close()
 
 
 json_string = json.dumps(Awaynames, ensure_ascii=False)
-jsonFile = open("away_line.json", "w")
+jsonFile = open("./public/analysis/away_line.json", "w", encoding="utf-8")
 jsonFile.write(json_string)
 jsonFile.close()
 
