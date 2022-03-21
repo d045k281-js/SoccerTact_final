@@ -53,8 +53,9 @@ def generate_HeatMap(m_id, t1, e_data, l_data, event_type):
                               ax=ax, ha='center', va='center',
                               str_format='{:.0%}', path_effects=path_eff)
     ax.set_title(f'{t1} {event_type} Map', fontsize=12, color = "black")
-    plt.show()
 
 
 
 
+    fig.savefig('./public/analysis/heatmap.png')
+  
