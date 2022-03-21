@@ -87,5 +87,4 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
     elif (event_type == "Pressure"):
          fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t2_pressure.png')
 
-
-
+  
