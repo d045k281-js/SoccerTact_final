@@ -19,30 +19,10 @@ import requests
 import json
 from pandas import json_normalize
 
-
-team_name = sys.argv[2]
-event_type = sys.argv[3]
-
-print(team_name)
-print(event_type)
-
-m_id = str(sys.argv[1])
-to_fetch = m_id+'.json'
-
-e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/"+to_fetch
-e_data = json.loads((requests.get(e_site)).text)
-
-l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/"+to_fetch
-l_data = json.loads((requests.get(l_site)).text)
-
-#getting the name of the teams
-df = json_normalize(l_data, sep = "_").assign(match_id = m_id)
-events = df.loc[df['match_id'] == m_id]
-
 path_eff = [path_effects.Stroke(linewidth=1.5, foreground='black'),
             path_effects.Normal()]
 
-def generate_HeatMap(m_id, t1, event_type):
+def generate_HeatMap(m_id, t1, e_data, l_data, event_type):
     
     pitch = VerticalPitch(pitch_type='statsbomb', line_zorder=2, pitch_color='#f4edf0')
     fig, ax = pitch.draw(figsize=(4.125, 6))
@@ -72,9 +52,9 @@ def generate_HeatMap(m_id, t1, event_type):
     labels2 = pitch.label_heatmap(bin_statistic, color='#f4edf0', fontsize=18,
                               ax=ax, ha='center', va='center',
                               str_format='{:.0%}', path_effects=path_eff)
+    ax.set_title(f'{t1} {event_type} Map', fontsize=12, color = "black")
     plt.show()
-  
-generate_HeatMap(m_id, team_name, event_type)
+
 
 
 

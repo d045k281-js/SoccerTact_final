@@ -41,5 +41,5 @@ def generate_ShotXg(m_id,team_name,e_data,l_data):
            shotCircle2= pitch.scatter(x, y, marker='football', s= circleSize, ax=ax)     
             
     ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
-    ax.set_title(f'{team_name} Shot Map', fontsize=30, pad=-20)
+    ax.set_title(f'{team_name} Shot Map', fontsize=15, color = "black")
     plt.show()

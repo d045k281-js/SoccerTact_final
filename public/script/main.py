@@ -1,6 +1,7 @@
 from ShotMap import generate_ShotXg
 from pass_map import generate_pass
 from pass_map import passing_network 
+from Event_HeatMap import generate_HeatMap
 
 import sys
 import requests
@@ -35,3 +36,6 @@ events = df.loc[df['match_id'] == m_id]
 generate_ShotXg(m_id,team_name,e_data,l_data)
 generate_pass(m_id,team_name,e_data,l_data)
 passing_network(m_id, team_name, e_data, l_data)
+generate_HeatMap(m_id, team_name, e_data, l_data, event_type= "Pressure")
+generate_HeatMap(m_id, team_name, e_data, l_data, event_type= "Pass")
+generate_HeatMap(m_id, team_name, e_data, l_data, event_type= "Duel")

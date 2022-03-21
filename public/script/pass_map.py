@@ -7,6 +7,8 @@ Created on Sat Feb 19 00:48:06 2022
 """
 
 
+from hashlib import blake2b
+from turtle import color
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -64,7 +66,7 @@ def generate_pass(m_id,team_name,e_data,l_data):
     fm = pitch.flow(df_pass.x, df_pass.y, df_pass.end_x, df_pass.end_y,
                 color='black', arrow_type='same',
                 arrow_length=5, bins=bins, ax=ax)
-    ax.set_title(f'{team_name} pass flow map', fontsize=30, pad=-20)
+    ax.set_title(f'{team_name} pass flow map', fontsize=12, color = "red")
     plt.show()
 
 
