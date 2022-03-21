@@ -74,12 +74,22 @@ app.post("/play", upload.none(), (req, res) => {
   let match = {
     id: data,
   };
+  let names={
+    hname:home,
+    aname:away, 
+  }
 
   let data2 = JSON.stringify(match);
+  let home2=JSON.stringify(names);
   fs.writeFile("./public/analysis/matchid.json", data2, (err) => {
     if (err) throw err;
     console.log("Data written to file");
   });
+  fs.writeFile("./public/analysis/homename.json", home2, (err) => {
+    if (err) throw err;
+    console.log("Data written to file");
+  });
+ 
   console.log(data)
   spawn("python", ["./public/script/shots.py", data]);
   spawn("python", ["./public/script/lineup.py", data]);

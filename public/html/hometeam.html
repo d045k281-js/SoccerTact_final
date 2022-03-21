@@ -101,26 +101,7 @@ img.onerror = function(e) {
           mySelect.appendChild(newOption);
         }
       }
-      setTimeout(awayPlayers, 0.01);
-      async function awayPlayers(){
-        const response = await fetch("../analysis/away_line.json");
-        const players = await response.json();
-        let away_players_data = players;
-        // console.log(away_players_data);
-        for (i = 0; i < away_players_data.length; i++) {
-          var mySelect = document.getElementById("away_team_select");
-          mySelect.setAttribute("size", mySelect.childElementCount);
-          var newOption = document.createElement("option");
-          newOption.value = away_players_data[i];
-          if (typeof newOption.textContent === "undefined") {
-            newOption.innerText = away_players_data[i];
-          } else {
-            newOption.textContent = away_players_data[i];
-          }
-          mySelect.appendChild(newOption);
-         
-        }
-      }
+ 
       var data = new FormData();
      
      

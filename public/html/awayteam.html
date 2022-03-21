@@ -14,7 +14,7 @@
     
   
       <div class=”container”>
-        <img style="display: flex; margin-left: 0px; max-width: 35%;" src="../images/SoccerTact_logo.png"><br><br>
+        <img style="margin-left: 0px; max-width: 15%;" src="../images/SoccerTact_logo.png"><br><br>
             
                 
                 
@@ -31,15 +31,15 @@
                   </select>
                   </div>             
                 
-                  <div style="margin-top:5% "><img id="myImg" width="500px"   ></div>
+                  <div style="margin-top:5% "><img id="myImg" width="500px"   >    <div class="analysis_buttons">
+                    <button class="pass">Pass <b>Analysis</b></button>
+                    <button class="five">Shot <b>Analysis</b></button>
+                    <button class="heat">Show <b>Heatmap</b></button>
+                  </div> </div>
       
               
               </div>
-              <div class="analysis_buttons">
-                <button class="pass">Pass <b>Analysis</b></button>
-                <button class="five">Shot <b>Analysis</b></button>
-                <button class="heat">Show <b>Heatmap</b></button>
-              </div> 
+           
     
       </div>
 
@@ -69,27 +69,6 @@ img.onerror = function(e) {
 };
 
        console.log("heloo")
-    setTimeout(homePlayers, 0.01);
-      async function homePlayers(){
-        const response = await fetch("../analysis/home_line.json");
-        const players = await response.json();
-        let home_players_data = players;
-        // console.log(home_players_data);
-        for (i = 0; i < home_players_data.length; i++) {
-          //console.log(i)
-          var mySelect = document.getElementById("home_team_select");
-          mySelect.setAttribute("size", mySelect.childElementCount);
-          var newOption = document.createElement("option");
-          newOption.value = home_players_data[i];
-          // console.log(home_players_data[i]);
-          if (typeof newOption.textContent === "undefined") {
-            newOption.innerText = home_players_data[i];
-          } else {
-            newOption.textContent = home_players_data[i];
-          }
-          mySelect.appendChild(newOption);
-        }
-      }
       setTimeout(awayPlayers, 0.01);
       async function awayPlayers(){
         const response = await fetch("../analysis/away_line.json");

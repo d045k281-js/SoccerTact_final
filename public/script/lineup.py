@@ -25,13 +25,13 @@ Awaynames = [nm['player_name'] for nm in away_team_lineup]
 
 
 json_string = json.dumps(Homenames, ensure_ascii=False)
-jsonFile = open("./public/analysis/home_line.json", "w",encoding="utf-8")
+jsonFile = open("./public/analysis/away_line.json", "w",encoding="utf-8")
 jsonFile.write(json_string)
 jsonFile.close()
 
 
 json_string = json.dumps(Awaynames, ensure_ascii=False)
-jsonFile = open("./public/analysis/away_line.json", "w", encoding="utf-8")
+jsonFile = open("./public/analysis/home_line.json", "w", encoding="utf-8")
 jsonFile.write(json_string)
 jsonFile.close()
 
