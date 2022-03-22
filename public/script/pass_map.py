@@ -69,7 +69,7 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
                 color='black', arrow_type='same',
                 arrow_length=5, bins=bins, ax=ax)
     ax.set_title(f'{t1} pass flow map VS {t2}', fontsize=12, color = "red")
-    fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t1_pass_flow.png')
+    fig.savefig('./public/analysis/t1pass.png')
 
 
     for i, event in t2_pass.iterrows():
@@ -91,7 +91,7 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
                 color='black', arrow_type='same',
                 arrow_length=5, bins=bins, ax=ax)
     ax.set_title(f'{t2} pass flow map vs {t1}', fontsize=12, color = "red")
-    fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t2_pass_flow.png')
+    fig.savefig('./public/analysis/t2pass.png')
 
 
 def passing_network(m_id,t1,t2,e_data,l_data):
@@ -195,7 +195,7 @@ def passing_network(m_id,t1,t2,e_data,l_data):
 
     axs['title'].text(0.5, 0.7, f'{t1} Passing Network VS {t2}', color='#c7d5cc',
                   va='center', ha='center', fontsize=30)
-    fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t1_PN.png')
+    fig.savefig("./public/analysis/t1pn.png")
 
 
     t2_data = df.loc[df['team_name'] == t2].set_index('id')
@@ -291,5 +291,5 @@ def passing_network(m_id,t1,t2,e_data,l_data):
 
     axs['title'].text(0.5, 0.7, f'{t2} Passing Network VS {t1}', color='#c7d5cc',
                   va='center', ha='center', fontsize=30)
-    fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t2_PN.png')
+    fig.savefig('./public/analysis/t2_PN.png')
     
