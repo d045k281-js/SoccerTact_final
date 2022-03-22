@@ -22,26 +22,40 @@ def scrapeInfo(player_name):
             #print("Found the URL:", a['href'])
             
         if th is not None and td is not None:
+                #print("TH : " + str(th.text))
                 innerText = ''
+                #if (th.text == "Position(s)"):
                 for elem in td.recursiveChildGenerator():
+                        #print("elem: " + str(elem))
                     if isinstance(elem, str):
-                        innerText += elem.strip()
+                            innerText += elem.strip()
+                            #print("INNER: " + str(innerText))
                     elif elem.name == 'br':
-                        innerText += '\n'
+                            innerText += '\n'
+                    #print(innerText)
                 info[th.text] = innerText
 
     #print(json.dumps(info, indent=1))
 
     Name = info["Full name"].strip('[1]')
-    Birth = info["Date of birth"]
-    DOB = Birth[12:24] 
-    Age = Birth[29:31]
-    Height = info["Height"]
-    h = Height[-60:9]
-    hei = h.replace(u'\xa0', u' ')
+    Birth = info["Date of birth"].replace(u'\xa0', u' ')
+    DOB = Birth.split("(", 2)[1]
+    DOB = DOB.split(")", 2)[0]
+    Age = Birth.split("age ", 2)[1]
+    Age = Age.split(")", 2)[0]
+    He = info["Height"]
+    Height = He.split("(",1)[1] 
+    hei = Height.split(")", 2)[0].replace(u'\xa0', u' ')
     pos = info['Position(s)']
-    team = info["Current team"]
-    num = info["Number"]
+    try: 
+            team = info["Current team"]
+    except KeyError: 
+            team = "Retired"
+
+    try:        
+            num = info["Number"]
+    except KeyError:
+            num = "-"
 
     player_info = [Name, DOB, Age, hei, pos, team, num]
 
