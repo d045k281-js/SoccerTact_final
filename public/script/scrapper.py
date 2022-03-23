@@ -37,7 +37,7 @@ def scrapeInfo(player_name):
 
     #print(json.dumps(info, indent=1))
 
-    Name = info["Full name"].strip('[1]').replace(u'\xa0', u' ')
+    Name = info["Full name"].strip('[1]')
     # Name = Name.replace(u'\u00e', u' ')
     Birth = info["Date of birth"].replace(u'\xa0', u' ')
     DOB = Birth.split("(", 2)[1]
@@ -59,8 +59,8 @@ def scrapeInfo(player_name):
             num = "-"
 
     player_info = [Name, DOB, Age, hei, pos, team, num]
-
-    jsonString = json.dumps(player_info)
-    with open("./public/ply_analysis/data.json", 'w') as outfile:
-        outfile.write(jsonString)
     
+    json_string = json.dumps(player_info, ensure_ascii=False)
+    jsonFile = open("./public/analysis/plyscrapper.json", "w", encoding="utf-8")
+    jsonFile.write(json_string)
+    jsonFile.close()

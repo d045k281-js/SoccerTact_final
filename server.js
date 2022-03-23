@@ -113,7 +113,7 @@ app.post("/plyloading", upload.none(), (req, res) => {
   //const data=formData.plyname;
   const data2 = formData.id;
   // console.log(saveme);
-  console.log(String(data) + data2);
+  // console.log(String(data) + data2);
   spawn("python", ["./public/script/player_analysis.py", data2, data]);
   spawn("python", ["./public/script/img.py", data + " soccer headshot"]);
 
