@@ -60,7 +60,6 @@ def scrapeInfo(player_name):
     player_info = [Name, DOB, Age, hei, pos, team, num]
 
     jsonString = json.dumps(player_info)
-    jsonFile = open("/Users/atifsiddiqui/Desktop/soccerTact/data.json", "w")
-    jsonFile.write(jsonString)
-    jsonFile.close() 
-
+    with open("./public/ply_analysis/data.json", 'w') as outfile:
+        outfile.write(jsonString)
+    

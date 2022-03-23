@@ -56,11 +56,11 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
                               str_format='{:.0%}', path_effects=path_eff)
     ax.set_title(f'{t1} {event_type} Map VS {t2}', fontsize=12, color = "black")
     if (event_type == "Duel"):
-        fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t1_Duel.png')
+        fig.savefig('./public/analysis/t1_duel.png')
     elif (event_type == "Pass"):
-        fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t1_pass.png')
+        fig.savefig('./public/analysis/t1_pass.png')
     elif (event_type == "Pressure"):
-         fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t1_pressure.png')
+         fig.savefig('./public/analysis/t1_pressure.png')
 
 
     for i, event in t2_event_heat.iterrows():
@@ -79,12 +79,12 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
     labels2 = pitch.label_heatmap(bin_statistic, color='#f4edf0', fontsize=18,
                               ax=ax, ha='center', va='center',
                               str_format='{:.0%}', path_effects=path_eff)
-    ax.set_title(f'{t2} {event_type} Map VS {t2}', fontsize=12, color = "black")
+    ax.set_title(f'{t2} {event_type} Map VS {t1}', fontsize=12, color = "black")
     if (event_type == "Duel"):
-        fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t2_Duel.png')
+        fig.savefig('./public/analysis/t2_duel.png')
     elif (event_type == "Pass"):
-        fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t2_pass.png')
+        fig.savefig('./public/analysis/t2_pass.png')
     elif (event_type == "Pressure"):
-         fig.savefig('/Users/atifsiddiqui/Desktop/soccerTact' + '/t2_pressure.png')
+         fig.savefig('./public/analysis/t2_pressure.png')
 
   
