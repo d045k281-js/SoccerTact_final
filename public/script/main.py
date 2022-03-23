@@ -3,6 +3,7 @@ from pass_map import generate_pass
 from pass_map import passing_network 
 from Event_HeatMap import generate_HeatMap
 from timeline import generate_timeline
+from team_KPI import getMatchKPI
 
 import sys
 import requests
@@ -43,4 +44,5 @@ generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Pass")
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Duel")
 generate_timeline(m_id, t1, e_data, l_data, 't1')
 generate_timeline(m_id, t2, e_data, l_data, 't2')
+getMatchKPI(m_id, t1, t2, e_data, l_data)
 
