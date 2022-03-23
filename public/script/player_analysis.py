@@ -36,8 +36,8 @@ for i,event in events.iterrows():
 #t2 is second teams name
 #e_data is the event data for that match ID
 #l_data is the lineup data for that match ID
-# generate_passMap(m_id, t1 ,t2, e_data,l_data, player_name)
-# generate_possesion(m_id,t1,t2,e_data,l_data, player_name)
-# generate_Shots(m_id,t1,t2,e_data,l_data, player_name)
-# generatePlayerKPI(m_id,t1,t2,e_data,l_data, player_name)
+generate_passMap(m_id, t1 ,t2, e_data,l_data, player_name)
+generate_possesion(m_id,t1,t2,e_data,l_data, player_name)
+generate_Shots(m_id,t1,t2,e_data,l_data, player_name)
+generatePlayerKPI(m_id,t1,t2,e_data,l_data, player_name)
 scrapeInfo(player_name)

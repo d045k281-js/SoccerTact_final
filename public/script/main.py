@@ -2,6 +2,7 @@ from ShotMap import generate_ShotXg
 from pass_map import generate_pass
 from pass_map import passing_network 
 from Event_HeatMap import generate_HeatMap
+from timeline import generate_timeline
 
 import sys
 import requests
@@ -33,9 +34,13 @@ for i,event in events.iterrows():
 #t2 is second teams name
 #e_data is the event data for that match ID
 #l_data is the lineup data for that match ID
+
 generate_ShotXg(m_id,t1,t2,e_data,l_data)
 generate_pass(m_id,t1,t2,e_data,l_data)
 passing_network(m_id, t1,t2, e_data, l_data)
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Pressure")
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Pass")
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Duel")
+generate_timeline(m_id, t1, e_data, l_data, 't1')
+generate_timeline(m_id, t2, e_data, l_data, 't2')
+

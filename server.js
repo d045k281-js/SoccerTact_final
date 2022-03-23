@@ -93,8 +93,8 @@ app.post("/play", upload.none(), (req, res) => {
   console.log(data)
   spawn("python", ["./public/script/main.py", data]);
   spawn("python", ["./public/script/lineup.py", data]);
-  spawn("python", ["./public/script/homeimg.py", home + " logo transparent"]);
-  spawn("python", ["./public/script/awayimg.py", away + " logo transparent"]);
+  spawn("python", ["./public/script/homeimg.py", home + " soccer logo transparent"]);
+  spawn("python", ["./public/script/awayimg.py", away + " soccer logo transparent"]);
   
   console.log("running script!");
   // res.sendStatus(200);

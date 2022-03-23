@@ -37,7 +37,8 @@ def scrapeInfo(player_name):
 
     #print(json.dumps(info, indent=1))
 
-    Name = info["Full name"].strip('[1]')
+    Name = info["Full name"].strip('[1]').replace(u'\xa0', u' ')
+    # Name = Name.replace(u'\u00e', u' ')
     Birth = info["Date of birth"].replace(u'\xa0', u' ')
     DOB = Birth.split("(", 2)[1]
     DOB = DOB.split(")", 2)[0]
