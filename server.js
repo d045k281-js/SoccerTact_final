@@ -92,7 +92,10 @@ app.post("/play", upload.none(), (req, res) => {
  
   console.log(data)
   main=spawn("python", ["./public/script/main.py", data]);
-
+  main.stderr.on('data',(data)=>{
+    //Here data is of type buffer
+    console.log(data.toString())
+  })
   spawn("python", ["./public/script/lineup.py", data]);
   spawn("python", ["./public/script/homeimg.py", home + " soccer logo transparent"]);
   spawn("python", ["./public/script/awayimg.py", away + " soccer logo transparent"]);

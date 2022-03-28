@@ -6,7 +6,6 @@ Created on Wed Feb  9 14:47:06 2022
 @author: atifsiddiqui
 """
 from player_viz import generate_passMap, generate_possesion, generate_Shots, generatePlayerKPI
-from scrapper import scrapeInfo 
 import sys
 import requests
 import json
