@@ -94,7 +94,7 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
         transform=fig3.transFigure, figure=fig3
     ),
 ])
-    fig3.savefig('./public/ply_analysis/pass.png')
+    fig3.savefig('./public/ply_analysis/pass.png', bbox_inches = 'tight')
     #fig3.savefig('/Users/atifsiddiqui/Desktop/pass.png')
 
 def generate_possesion(m_id,t1,t2,e_data,l_data, name):
@@ -121,7 +121,7 @@ def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     hexmap = pitch.hexbin(df.x, df.y, ax=ax, edgecolors='#f4f4f4',
                       gridsize=(8, 8), cmap=flamingo_cmap)
     #ax.set_title(f'{name_req} possesion vs {t2}', fontsize=15, y = 1.0)
-    fig.savefig('./public/ply_analysis/poss.png')
+    fig.savefig('./public/ply_analysis/poss.png', bbox_inches = 'tight')
     
 def generate_Shots(m_id,t1,t2,e_data,l_data, name):
     pitch = Pitch(half = True, pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
@@ -157,7 +157,7 @@ def generate_Shots(m_id,t1,t2,e_data,l_data, name):
             
     ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
     #ax.set_title(f'{name_req} Shots vs {t2}', fontsize=15, y = 1.0)
-    fig2.savefig('./public/ply_analysis/shot.png')
+    fig2.savefig('./public/ply_analysis/shot.png', bbox_inches = 'tight')
   
 def generatePlayerKPI(m_id,t1,t2,e_data,l_data, name):
     params = []
@@ -259,5 +259,5 @@ def generatePlayerKPI(m_id,t1,t2,e_data,l_data, name):
     )
     #fig4.text( 0.515, 0.875, "Key Performance Indicators", size=16, ha="center", fontproperties=font_bold.prop, color="#000000")
     #ax.set_title(f'{name} KPI', fontsize=12, color = "black")
-    fig4.savefig('./public/ply_analysis/KPI.png', transparent = True)
+    fig4.savefig('./public/ply_analysis/KPI.png', transparent = True, bbox_inches = 'tight')
     #fig4.savefig('/Users/atifsiddiqui/Desktop/pass.png', transparent = True)
