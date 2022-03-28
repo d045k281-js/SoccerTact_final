@@ -35,9 +35,9 @@ from matplotlib.colors import to_rgba
 
 def generate_pass(m_id,t1,t2,e_data,l_data):
     
-    pitch = VerticalPitch(pitch_type='statsbomb',axis=True, line_zorder=2, line_color='#c7d5cc', pitch_color='#22312b')  # showing axis labels is optional
+    pitch = Pitch(pitch_type='statsbomb',axis=True, line_zorder=2, line_color='#c7d5cc', pitch_color='#22312b')  # showing axis labels is optional
     bins = (6, 4)
-    fig, ax = pitch.draw(figsize=(8, 6), constrained_layout=True, tight_layout=False)
+    fig, ax = pitch.draw(figsize=(10, 8), constrained_layout=True, tight_layout=False)
     fig.set_facecolor('#22312b')
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)  
@@ -68,8 +68,8 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
     fm = pitch.flow(df_pass.x, df_pass.y, df_pass.end_x, df_pass.end_y,
                 color='black', arrow_type='same',
                 arrow_length=5, bins=bins, ax=ax)
-    ax.set_title(f'{t1} pass flow map VS {t2}', fontsize=12, color = "red")
-    fig.savefig('./public/analysis/t1pass.png')
+    #ax.set_title(f'{t1} pass flow map VS {t2}', fontsize=12, color = "red")
+    fig.savefig('./public/analysis/t1pass.png', bbox_inches = 'tight')
 
 
     for i, event in t2_pass.iterrows():
@@ -91,7 +91,7 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
                 color='black', arrow_type='same',
                 arrow_length=5, bins=bins, ax=ax)
     ax.set_title(f'{t2} pass flow map vs {t1}', fontsize=12, color = "red")
-    fig.savefig('./public/analysis/t2pass.png')
+    fig.savefig('./public/analysis/t2pass.png', bbox_inches = 'tight')
 
 
 def passing_network(m_id,t1,t2,e_data,l_data):
@@ -291,5 +291,5 @@ def passing_network(m_id,t1,t2,e_data,l_data):
 
     axs['title'].text(0.5, 0.7, f'{t2} Passing Network VS {t1}', color='#c7d5cc',
                   va='center', ha='center', fontsize=30)
-    fig.savefig('./public/analysis/t2_PN.png')
+    fig.savefig('./public/analysis/t2_PN.png', bbox_inches = 'tight')
     
