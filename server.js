@@ -91,7 +91,8 @@ app.post("/play", upload.none(), (req, res) => {
   });
  
   console.log(data)
-  spawn("python", ["./public/script/main.py", data]);
+  main=spawn("python", ["./public/script/main.py", data]);
+
   spawn("python", ["./public/script/lineup.py", data]);
   spawn("python", ["./public/script/homeimg.py", home + " soccer logo transparent"]);
   spawn("python", ["./public/script/awayimg.py", away + " soccer logo transparent"]);
@@ -115,8 +116,11 @@ app.post("/plyloading", upload.none(), (req, res) => {
   // console.log(saveme);
   // console.log(String(data) + data2);
   spawn("python", ["./public/script/player_analysis.py", data2, data]);
-  spawn("python", ["./public/script/img.py", data + " soccer headshot"]);
-
+  // spawn("python", ["./public/script/img.py", data + " soccer headshot"]);
+  player.stderr.on('data',(data)=>{
+    //Here data is of type buffer
+    console.log(data.toString())
+  })
   //console.log("running script!")
   // res.sendStatus(200);
 

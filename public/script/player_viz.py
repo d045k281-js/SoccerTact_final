@@ -259,5 +259,5 @@ def generatePlayerKPI(m_id,t1,t2,e_data,l_data, name):
     )
     #fig4.text( 0.515, 0.875, "Key Performance Indicators", size=16, ha="center", fontproperties=font_bold.prop, color="#000000")
     #ax.set_title(f'{name} KPI', fontsize=12, color = "black")
-    fig4.savefig('./public/ply_analysis/.png', transparent = True)
+    fig4.savefig('./public/ply_analysis/KPI.png', transparent = True)
     #fig4.savefig('/Users/atifsiddiqui/Desktop/pass.png', transparent = True)

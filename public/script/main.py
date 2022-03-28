@@ -14,11 +14,17 @@ m_id = str(sys.argv[1])
 #team_name = sys.argv[2]
 to_fetch = m_id+'.json'
 
-e_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/events"+to_fetch
-e_data = json.loads(e_site.text)
+# e_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/events/"+to_fetch
+# e_data=open('/Users/deepak/Documents/SoccerTact_final/public/data/data/events/'+to_fetch, "r")
+with open('./public/data/data/events/'+to_fetch , encoding="utf-8") as e_site:
+    e_data = json.load(e_site)
 
-l_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/lineups"+to_fetch
-l_data = json.loads(l_site.text)
+# l_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/lineups/"+to_fetch
+# l_data = json.loads((requests.get(l_site)).text)
+# l_data=open('/Users/deepak/Documents/SoccerTact_final/public/data/data/lineups/'+to_fetch, "r")
+with open('./public/data/data/lineups/'+to_fetch, encoding="utf-8") as l_site:
+    l_data = json.load(l_site)
+
 
 #getting the name of the teams
 df = json_normalize(l_data, sep = "_").assign(match_id = m_id)
@@ -42,7 +48,7 @@ passing_network(m_id, t1,t2, e_data, l_data)
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Pressure")
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Pass")
 generate_HeatMap(m_id, t1,t2, e_data, l_data, event_type= "Duel")
-generate_timeline(m_id, t1, e_data, l_data, 't1')
-generate_timeline(m_id, t2, e_data, l_data, 't2')
+# generate_timeline(m_id, t1, e_data, l_data, 't1')
+# generate_timeline(m_id, t2, e_data, l_data, 't2')
 getMatchKPI(m_id, t1, t2, e_data, l_data)
 
