@@ -81,10 +81,10 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
                               str_format='{:.0%}', path_effects=path_eff)
     #ax.set_title(f'{t2} {event_type} Map VS {t1}', fontsize=12, color = "black")
     if (event_type == "Duel"):
-        fig.savefig('./public/analysis/t2_duel.png')
+        fig.savefig('./public/analysis/t2_duel.png', bbox_inches = 'tight')
     elif (event_type == "Pass"):
-        fig.savefig('./public/analysis/t2_pass.png')
+        fig.savefig('./public/analysis/t2_pass.png', bbox_inches = 'tight')
     elif (event_type == "Pressure"):
-         fig.savefig('./public/analysis/t2_pressure.png')
+         fig.savefig('./public/analysis/t2_pressure.png', bbox_inches = 'tight')
 
   
