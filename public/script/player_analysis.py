@@ -16,10 +16,10 @@ m_id = str(sys.argv[1])
 player_name = str(sys.argv[2])
 to_fetch = m_id+'.json'
 
-e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/"+to_fetch
+e_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/events"+to_fetch
 e_data = json.loads((requests.get(e_site)).text)
 
-l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/"+to_fetch
+l_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/lineups"+to_fetch
 l_data = json.loads((requests.get(l_site)).text)
 
 #getting the name of the teams
