@@ -4,7 +4,7 @@ import bs4
 import json
 import sys
 
-
+player= str(sys.argv[1])
 def scrapeInfo(player_name):
     text = str(player_name)
     url = 'https://en.wikipedia.org/wiki/' + text
@@ -64,3 +64,5 @@ def scrapeInfo(player_name):
     jsonFile = open("./public/analysis/plyscrapper.json", "w", encoding="utf-8")
     jsonFile.write(json_string)
     jsonFile.close()
+
+scrapeInfo(player)

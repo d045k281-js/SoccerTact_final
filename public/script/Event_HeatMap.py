@@ -24,8 +24,8 @@ path_eff = [path_effects.Stroke(linewidth=1.5, foreground='black'),
 
 def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
     
-    pitch = VerticalPitch(pitch_type='statsbomb', line_zorder=2, pitch_color='#f4edf0')
-    fig, ax = pitch.draw(figsize=(4.125, 6))
+    pitch = Pitch(pitch_type='statsbomb', line_zorder=2, pitch_color='#f4edf0')
+    fig, ax = pitch.draw(figsize=(10,8))
     fig.set_facecolor('#f4edf0')
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
@@ -79,12 +79,12 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
     labels2 = pitch.label_heatmap(bin_statistic, color='#f4edf0', fontsize=18,
                               ax=ax, ha='center', va='center',
                               str_format='{:.0%}', path_effects=path_eff)
-    ax.set_title(f'{t2} {event_type} Map VS {t1}', fontsize=12, color = "black")
+    #ax.set_title(f'{t2} {event_type} Map VS {t1}', fontsize=12, color = "black")
     if (event_type == "Duel"):
-        fig.savefig('./public/analysis/t2_duel.png')
+        fig.savefig('./public/analysis/t2_duel.png', bbox_inches = 'tight')
     elif (event_type == "Pass"):
-        fig.savefig('./public/analysis/t2_pass.png')
+        fig.savefig('./public/analysis/t2_pass.png', bbox_inches = 'tight')
     elif (event_type == "Pressure"):
-         fig.savefig('./public/analysis/t2_pressure.png')
+         fig.savefig('./public/analysis/t2_pressure.png', bbox_inches = 'tight')
 
   

@@ -4,8 +4,8 @@
       <base href="/"> 
       <link rel="stylesheet" href="../css/style.css">
       <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png"><br><br>
-      <div style="display: flex;
-     " >
+      <div style="display: flex; size: 10%;
+   " >
       <img id="plyimg" style="size:100%; border: 2px solid black;">
       <table border="3" bordercolor="black" style="width: 100%; background-color: crimson;" >
         <tr>
@@ -30,12 +30,14 @@
        
        
     </table>
+    
   </div>
+
     </head>
 <body>
   <div  style="display: inline; display: flex;">
    
-    <div style="margin-top: 2%; margin-left: 2%;"><img id="myImg" style="height: 95%; width:90%;"  ></div>
+    <div  margin-left: 2%;"><img id="myImg" style="height: 95%; width:90%;"  ></div>
     <div style="margin-top: 2%;"><img id="myImg2" style="height: 95%; width:90%;"  ></div>
     <div style="margin-top: 2%;"><img id="myImg3" style="height: 95%; width:90%;"  ></div>
     <div style="margin-top: 2%;"><img id="myImg4" style="height: 95%; width:90%;"  ></div>
@@ -60,13 +62,13 @@
         var pos=names[4];
         var curr=names[5];
         var jer=names[6];
-        document.getElementById("plyname").innerHTML=name;
-        document.getElementById("DOB").innerHTML=DOB;
-        document.getElementById("age").innerHTML=age;
-        document.getElementById("hei").innerHTML=height;
-        document.getElementById("Pos").innerHTML=pos;
-        document.getElementById("jer").innerHTML=jer;
-        document.getElementById("cur_team").innerHTML=curr;
+        document.getElementById("plyname").innerHTML="Name: "+name;
+        document.getElementById("DOB").innerHTML="DOB: "+DOB;
+        document.getElementById("age").innerHTML="Age: "+age;
+        document.getElementById("hei").innerHTML="Height: "+height;
+        document.getElementById("Pos").innerHTML="Position: "+pos;
+        document.getElementById("jer").innerHTML="No: "+jer;
+        document.getElementById("cur_team").innerHTML="Team: "+curr;
       }
       setTimeout(playbox, 0);
        async function awayply(){
