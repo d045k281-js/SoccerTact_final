@@ -36,7 +36,7 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
     #Size of the pitch in yards (!!!)
     
     
-    pitch = VerticalPitch(pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
+    pitch = Pitch(pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
     fig3, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
     # get the nested structure into a dataframe 
     # store the dataframe in a dictionary with the match id as key (remove '.json' from string)
@@ -81,16 +81,16 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
 # Set the title
     #ax.set_title(f'{name_req} passes vs {t2}', fontsize=15, y = 1.0)
     fig3.text(
-        0.5, 0.07, "Complete       Incomplete", size=14,
+        0.07, 0.09, "Complete       Incomplete", size=14,
         fontproperties=font_bold.prop, color="black"
     )
     fig3.patches.extend([
     plt.Rectangle(
-        (0.47, 0.07), 0.025, 0.021, fill=True, color="#ad993c",
+        (0.04, 0.09), 0.025, 0.021, fill=True, color="#ad993c",
         transform=fig3.transFigure, figure=fig3
     ),
     plt.Rectangle(
-        (0.59, 0.07), 0.025, 0.021, fill=True, color="#ba4f45",
+        (0.16, 0.09), 0.025, 0.021, fill=True, color="#ba4f45",
         transform=fig3.transFigure, figure=fig3
     ),
 ])
@@ -100,8 +100,8 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
 def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     flamingo_cmap = LinearSegmentedColormap.from_list("Flamingo - 10 colors",
                                                   ['#e3aca7', '#c03a1d'], N=10)
-    pitch = VerticalPitch(line_color='#000009', line_zorder=2, pitch_color='white')
-    fig, ax = pitch.draw(figsize=(4.4, 6.4))
+    pitch = Pitch(line_color='#000009', line_zorder=2, pitch_color='white')
+    fig, ax = pitch.draw(figsize=(10, 8))
    
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
@@ -120,12 +120,12 @@ def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     
     hexmap = pitch.hexbin(df.x, df.y, ax=ax, edgecolors='#f4f4f4',
                       gridsize=(8, 8), cmap=flamingo_cmap)
-    ax.set_title(f'{name_req} possesion vs {t2}', fontsize=15, y = 1.0)
+    #ax.set_title(f'{name_req} possesion vs {t2}', fontsize=15, y = 1.0)
     fig.savefig('./public/ply_analysis/poss.png')
     
 def generate_Shots(m_id,t1,t2,e_data,l_data, name):
-    pitch = VerticalPitch(half = True, pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
-    fig2, ax = pitch.draw(figsize=(8, 6), constrained_layout=False, tight_layout=True) 
+    pitch = Pitch(half = True, pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
+    fig2, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
     df_new = df.loc[df['type_name'] == 'Shot'].set_index('id')
@@ -156,7 +156,7 @@ def generate_Shots(m_id,t1,t2,e_data,l_data, name):
             shotCircle2= pitch.scatter(event['x'], event['y'], marker='football', s= circleSize, ax=ax)     
             
     ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
-    ax.set_title(f'{name_req} Shots vs {t2}', fontsize=15, y = 1.0)
+    #ax.set_title(f'{name_req} Shots vs {t2}', fontsize=15, y = 1.0)
     fig2.savefig('./public/ply_analysis/shot.png')
   
 def generatePlayerKPI(m_id,t1,t2,e_data,l_data, name):
