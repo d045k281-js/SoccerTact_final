@@ -124,7 +124,7 @@ def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     fig.savefig('./public/ply_analysis/poss.png', bbox_inches = 'tight')
     
 def generate_Shots(m_id,t1,t2,e_data,l_data, name):
-    pitch = Pitch(half = True, pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
+    pitch = VerticalPitch(half = True, pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
     fig2, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    

@@ -3,27 +3,32 @@
     <head>
       <base href="/"> 
       <link rel="stylesheet" href="../css/style.css">
-      <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png"><br><br>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/6.1.1/css/font-awesome.min.css" rel="stylesheet">
+      <div class="print">
+      <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png">
+      <button>Print</button>
+    </div>
+    <br><br>
       <div style="display: flex; size: 10%;
    " >
       <img id="plyimg" style="size:100%; border: 2px solid black;">
-      <table border="3" bordercolor="black" style="width: 100%;  " >
+      <table border="3" bordercolor="black" style="width: 100%; background-color: red;" >
         <tr>
-            <th colspan="3"><span id="plyname">name</span>e</th> 
+            <th colspan="3" class="name"><span id="plyname">name</span>e</th> 
         </tr>
         <tr>
          
-            <th><span id="age">Age</span></th>
-      <th><span id="DOB">DOB</span</th>
+            <th class="age"><span id="age"><b>Age</b></span><i class="fa-solid fa-award"></i></th>
+      <th class="DOB"><span id="DOB">DOB</span</th>
      
-        <th><span id="Pos">Pos</span></th>
+        <th class="Pos"><span id="Pos">Pos</span></th>
     
             
         </tr>
     
-              <th><span id="hei">height</span</th>
-      <th><span id="cur_team">C_tEAM</span</th>
-      <th><span id="jer">J_no</span</th>
+              <th class="height"><span id="hei">height</span</th>
+      <th class="c_team"><span id="cur_team">C_tEAM</span</th>
+      <th class="j_num"><span id="jer">J_no</span</th>
                     <!-- considering it is on the same folder that .html file -->
           
         </tr>
@@ -35,12 +40,14 @@
 
     </head>
 <body>
-  <div  style="display: inline; display: flex;">
+  <div class="player_images" style="display: inline; display: flex;">
    
-    <div  margin-left: 2%;"><img id="myImg" style="height: 95%; width:90%;"  ></div>
-    <div style="margin-top: 2%;"><img id="myImg2" style="height: 95%; width:90%;"  ></div>
-    <div style="margin-top: 2%;"><img id="myImg3" style="height: 95%; width:90%;"  ></div>
-    <div style="margin-top: 2%;"><img id="myImg4" style="height: 95%; width:90%;"  ></div>
+    <div  margin-left: 2%;"><img id="myImg" style="height: 65%; width:60%;"  ></div>
+    <div class="player_buttons">
+      <button class="passes"><b>Passes</b></button>
+      <button class="shots"><b>Shots</b></button>
+      <button class="possesion"><b>Possesion</b></button>
+    </div>
   </div>
        
        
