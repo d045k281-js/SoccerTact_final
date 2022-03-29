@@ -25,7 +25,7 @@
               <div style="display: flex; justify-content: space-between;" class="player_select">
                 <div>
                   <div class="logo_name">
-                  <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Home Team</h4>
+                  <h4 style="color: white; margin: 0%; margin-bottom: 5px;" id="hname"></h4>
                 <img  id="logohome" style="height: 80px; width: 80px; border: 5px solid red;"> 
                 <br>
                 </div>
@@ -38,12 +38,12 @@
                 
                   <div style="margin-top:5% "><img id="myImg" width="600px"   ></div>
                   <div class="analysis_buttons">
-                    <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass">Pass <b>Flow</b></button>
-                    <button style="width: 261px; height: 70px;" class="five">Shot <b>Map</b></button>
-                    <button style="width: 261px; height: 70px;" class="heat">Pass <b>Heatmap</b></button>
-                    <button style="width: 261px; height: 70px;" class="network">Passing <b>Network</b></button>
-                    <button style="width: 261px; height: 70px;" class="duel">Duel <b>HeatMap</b></button>
-                    <button style="width: 261px; height: 70px;" class="pressure">Pressure <b>Heatmap</b></button>
+                    <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
+                    <button style="width: 261px; height: 70px;" class="five" onclick="Shot_map()">Shot <b>Map</b></button>
+                    <button style="width: 261px; height: 70px;" class="heat" onclick="pass_heat()">Pass <b>Heatmap</b></button>
+                    <button style="width: 261px; height: 70px;" class="network" onclick="pass_net()">Passing <b>Network</b></button>
+                    <button style="width: 261px; height: 70px;" class="duel" onclick="duel()">Duel <b>HeatMap</b></button>
+                    <button style="width: 261px; height: 70px;" class="pressure" onclick="pressure()">Pressure <b>Heatmap</b></button>
                   </div> 
               
               </div>
@@ -52,6 +52,41 @@
      
 
      <script>
+        setTimeout(team1, 0);
+      
+      async function team1(){
+        const n= await fetch('../analysis/homename.json');
+      const h_name = await n.json();
+      var hname= h_name["hname"];
+      
+      document.getElementById("hname").innerText=hname;
+      // document.getElementById("aname").innerText=aname;
+      const response = await fetch('/script/s_d.json');
+      const names = await response.json();
+   
+       
+     
+      }
+        var img= document.getElementById("myImg");
+       function pass_flow(){
+        img.src="../analysis/t1pass.png";
+       }
+       function Shot_map(){
+        img.src="../analysis/t1_shot.png";
+       }
+       function pass_heat(){
+        img.src="../analysis/t1_pass.png";
+       }
+       function pass_net(){
+        img.src="../analysis/t1pn.png";
+       }
+       function duel(){
+        img.src="../analysis/t1_duel.png";
+       }
+       function pressure(){
+        img.src="../analysis/t1_pressure.png";
+       }
+
         async function homeply(){
     
     const response = await fetch('/analysis/homeimg.json');
@@ -72,7 +107,7 @@
        }
        setTimeout(awayply, 0);
 
-        var img= document.getElementById("myImg");
+        // var img= document.getElementById("myImg");
         img.src="../analysis/home.png";
 
 img.onload = function(e){

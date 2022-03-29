@@ -12,43 +12,64 @@
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
     
-  
-      <div class=”container”>
-        <div class="print">
-          <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png">
-          <button>Print</button>
-        </div>
-        <br><br>   
+  <div class=”container”>
+    <div class="print">
+      <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png">
+      <button>Print</button>
+    </div>
+    <br><br>   
+            
+            
+        <div>
+          <div style="display: flex; justify-content: space-between;" class="player_select">
             <div>
-              <div style="display: flex; justify-content: space-between;" class="player_select">
-                <div>
-                    <div class="logo_name">
-                      <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Away Team</h4> 
-                      <img id="logoaway" style="height: 80px; width: 80px; border: 5px solid gold">
-                      </div> 
-                      <br>
-                  <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; height: 410px;"class="away_team_select" id="away_team_select">
-                    <option  style="background-color: gold; color: white; "id="away_players" selected disabled>Away Team</option>
-                  </select>
-                  </div>             
-                  <div class="analysis_buttons">
-                    <button style="width: 200px; height: 80px;" class="pass">Pass <b>Flow</b></button>
-                    <button style="width: 200px; height: 80px;" class="five">Shot <b>Map</b></button>
-                    <button style="width: 200px; height: 80px;" class="heat">Pass <b>Heatmap</b></button>
-                    <button style="width: 200px; height: 80px;" class="network">Passing <b>Network</b></button>
-                    <button style="width: 200px; height: 80px;" class="duel">Duel <b>HeatMap</b></button>
-                    <button style="width: 200px; height: 80px;" class="pressure">Pressure <b>Heatmap</b></button>
-                  </div> 
-      
+              <div class="logo_name">
+              <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Away Team</h4>
+            <img  id="logoaway" style="height: 80px; width: 80px; border: 5px solid gold;"> 
+            <br>
+            </div>
+            <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; height: 405px;"class="away_team_select" id="away_team_select">
+              <option style="background-color: gold; color: white;"id="away_players" selected disabled>Away Team</option>
               
-              </div>
-           
-    
-      </div>
+            </select>
+            
+            </div>
+            
+              <div style="margin-top:5% "><img id="myImg" width="600px"   ></div>
+              <div class="analysis_buttons">
+                <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
+                <button style="width: 261px; height: 70px;" class="five" onclick="Shot_map()">Shot <b>Map</b></button>
+                <button style="width: 261px; height: 70px;" class="heat" onclick="pass_heat()">Pass <b>Heatmap</b></button>
+                <button style="width: 261px; height: 70px;" class="network" onclick="pass_net()">Passing <b>Network</b></button>
+                <button style="width: 261px; height: 70px;" class="duel" onclick="duel()">Duel <b>HeatMap</b></button>
+                <button style="width: 261px; height: 70px;" class="pressure" onclick="pressure()">Pressure <b>Heatmap</b></button>
+              </div> 
+          
+          </div>
+  </div>
 
      
 
      <script>
+       var img= document.getElementById("myImg");
+       function pass_flow(){
+        img.src="../analysis/t2pass.png";
+       }
+       function Shot_map(){
+        img.src="../analysis/t2_shot.png";
+       }
+       function pass_heat(){
+        img.src="../analysis/t2_pass.png";
+       }
+       function pass_net(){
+        img.src="../analysis/t2_PN.png";
+       }
+       function duel(){
+        img.src="../analysis/t2_duel.png";
+       }
+       function pressure(){
+        img.src="../analysis/t2_pressure.png";
+       }
 
       async function awayply(){
     
@@ -60,8 +81,8 @@
        }
        setTimeout(awayply, 0);
 
-        var img= document.getElementById("myImg");
-        img.src="../analysis/heatmap.png";
+        
+        img.src="../analysis/home.png";
 
 img.onload = function(e){
     

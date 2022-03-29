@@ -735,12 +735,6 @@ option{ border: 1px solid white;}
   height: 20%;
 }
 
-<<<<<<< HEAD
-.age{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffef16), to(rgba(154, 40, 87, 0.24))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f4f819, rgba(154, 40, 87, 0.24)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-}
-=======
 .name{
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fc6704), to(rgba(255, 94, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
   background-image: linear-gradient(to bottom, #f3a682, rgba(247, 126, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
@@ -1008,4 +1002,3 @@ option{ border: 1px solid white;}
     flex-direction: row;
     justify-content: space-between;
 }
->>>>>>> b52bd0133d90cce09d5479a6ae87f5e0687d53b7

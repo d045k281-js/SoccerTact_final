@@ -40,23 +40,19 @@
 
     </head>
 <body>
-  <div class="player_images" style="display: inline; display: flex;">
+  <div class="player_images" style="display: inline; display: flex; margin-top: 5%;">
    
-    <div  margin-left: 2%;"><img id="myImg" style="height: 65%; width:60%;"  ></div>
+    <div  margin-left: 2%;><img id="myImg" style="height: 70%; width:80%;"  ></div>
+    <div  margin-left: 2%;><img id="myImg2" style="height: 70%; width:80%;"  ></div>
     <div class="player_buttons">
-      <button class="passes"><b>Passes</b></button>
-      <button class="shots"><b>Shots</b></button>
-      <button class="possesion"><b>Possesion</b></button>
+      <button class="passes" onclick="pass()"><b>Passes</b></button>
+      <br>
+      <button class="shots" onclick="shot()"><b>Shots</b></button>
+      <br>
+      <button class="possesion" onclick="poss()"><b>Possesion</b></button>
     </div>
   </div>
-       
-       
-    
-
-
-     
       <scrip src="main.js">
- 
     </script>
     <script>
       async function playbox(){
@@ -101,12 +97,18 @@
 <script>
    var img= document.getElementById("myImg");
    var img2= document.getElementById("myImg2");
-   var img3= document.getElementById("myImg3");
-   var img4= document.getElementById("myImg4");
+  function pass(){
+    img2.src="../ply_analysis/pass.png";
+  }
+  function shot(){
+    img2.src="../ply_analysis/shot.png";
+  }
+  function poss(){
+  img2.src="../ply_analysis/poss.png";
+  }
         img.src="../ply_analysis/KPI.png";
         img2.src="../ply_analysis/pass.png";
-        img3.src="../ply_analysis/poss.png"
-        img4.src="../ply_analysis/shot.png"
+ 
 
 img.onload = function(e){
     
