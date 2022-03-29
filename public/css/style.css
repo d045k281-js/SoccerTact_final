@@ -732,7 +732,270 @@ option{ border: 1px solid white;}
   height: 20%;
 }
 
+.name{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc6704), to(rgba(255, 94, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f3a682, rgba(247, 126, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
 .age{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffef16), to(rgba(154, 40, 87, 0.24))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f4f819, rgba(154, 40, 87, 0.24)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc04b2), to(rgba(255, 0, 140, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #ea82f3, rgba(223, 45, 247, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
+.DOB{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc0404), to(rgba(255, 0, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f38a82, rgba(247, 52, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
+.Pos{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fce304), to(rgba(255, 217, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f3de82, rgba(247, 227, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
+.height{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc04b2), to(rgba(255, 0, 140, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #ea82f3, rgba(223, 45, 247, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
+.c_team{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc0404), to(rgba(255, 0, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f38a82, rgba(247, 52, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
+.j_num{
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fce304), to(rgba(255, 217, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f3de82, rgba(247, 227, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+}
+
+.passes {
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 15px 50px 20px 70px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.passes:hover {
+  background-position: 0% 30%;
+}
+.passes:hover:after {
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.passes:before, .passes:after {
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.passes:before {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.passes:after {
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+.passes {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #b60e0e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eb0c0c), to(rgba(154, 40, 87, 0.24))), url("https://images.ctfassets.net/xct4vv2g1nhc/7oBp9TqbLmAjGrDQn33GYH/7fb5c630f90703238bd235d8a41c004f/youth_soccer_passing_drills.jpg?w=1200&q=50");
+  background-image: linear-gradient(to bottom, #d60812, rgba(154, 40, 87, 0.24)), url("https://images.ctfassets.net/xct4vv2g1nhc/7oBp9TqbLmAjGrDQn33GYH/7fb5c630f90703238bd235d8a41c004f/youth_soccer_passing_drills.jpg?w=1200&q=50");
+}
+.passes:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #db0711;
+}
+.passes:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.passes:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.passes:after, .passes:before {
+}
+.passes b {
+  color: #fd0000;
+  font-weight: 700;
+}
+
+.shots {
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 15px 50px 20px 70px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.shots:hover {
+  background-position: 0% 30%;
+}
+.shots:hover:after {
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.shots:before, .shots:after {
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.shots:before {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.shots:after {
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+.shots {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #96940a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbcf2b), to(rgba(154, 40, 87, 0.24))), url("https://media.istockphoto.com/photos/soccer-ball-in-goal-picture-id700821934?k=20&m=700821934&s=612x612&w=0&h=exTBH6pyoYVVYnWuyxokZyGTjZPmYINTGuooOo_TUOI=");
+  background-image: linear-gradient(to bottom, #b9b61b, rgba(154, 40, 87, 0.24)), url("https://media.istockphoto.com/photos/soccer-ball-in-goal-picture-id700821934?k=20&m=700821934&s=612x612&w=0&h=exTBH6pyoYVVYnWuyxokZyGTjZPmYINTGuooOo_TUOI=");
+}
+.shots:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #b8ad18;
+}
+.shots:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.shots:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.shots:after, .shots:before {
+}
+.shots b {
+  color: #f3e40e;
+  font-weight: 700;
+}
+
+.possesion {
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 15px 50px 20px 70px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.possesion:hover {
+  background-position: 0% 30%;
+}
+.possesion:hover:after {
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.possesion:before, .possesion:after {
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.possesion:before {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.possesion:after {
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+.possesion{
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #d307da;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff16d8), to(rgba(154, 40, 87, 0.24))), url("https://sbcoachescollege.com/wp-content/uploads/2021/06/6-Soccer-Drills-To-Keep-Your-Team-In-Possession-Of-The-Ball.jpg");
+  background-image: linear-gradient(to bottom, #f819f8, rgba(154, 40, 87, 0.24)), url("https://sbcoachescollege.com/wp-content/uploads/2021/06/6-Soccer-Drills-To-Keep-Your-Team-In-Possession-Of-The-Ball.jpg");
+}
+.possesion:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #e51fff;
+}
+.possesion:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.possesion :hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.possesion :after, .possesion :before {
+}
+.possesion b {
+  color: #ff08ea;
+  font-weight: 700;
+}
+.player_images{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player_buttons{
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.print{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
