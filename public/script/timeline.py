@@ -9,7 +9,7 @@ from PIL import Image
 from matplotlib.ticker import MultipleLocator
 from pyparsing import col
 
-def generate_timeline(m_id, t1, e_data, l_data, image):
+def generate_timeline(m_id, t1, e_data, image):
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
     
     t1_data =  df.loc[df['team_name'] == t1].set_index('id')
@@ -57,8 +57,8 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     dates = ['0' , '45', '90']
 
     # # Choose some nice levels
-    levels = np.tile([-5, 5, -3, 3, -1, 1], int(np.ceil(len(minute)/6)))[:len(minute)]
-    # print (levels)
+    levels = np.tile([-1,1], int(np.ceil(len(minute)/2)))[:len(minute)]
+    print (levels)
     # # Create figure and plot a stem plot with the date
     fig, ax = plt.subplots(figsize=(10, 6),  constrained_layout=True)
     ax.set_facecolor("white")
@@ -113,7 +113,7 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
         # newax = fig.add_axes([d/100,l/10,0.2,0.2], zorder=1)
         # newax.imshow(im)
         ax.add_artist(ab)
-        ax.annotate(r+'\n'+d+'\n'+str(m) +"'", xy=(m, l), xytext=(-3, np.sign(l)*4),
+        ax.annotate(str(m) +"'", xy=(m, 0), xytext=(-3, np.sign(l)*40),
                     textcoords="offset points", va=va, ha="center", color="black")
 
 
@@ -129,8 +129,11 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
     plt.savefig(image +'_timeline.png') 
-
-    
+import requests
+import json
+l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
+e_data = json.loads((requests.get(l_site)).text)
+generate_timeline("18245", 'Real Madrid', e_data, "t1")
 
     # img = Image.open('t1_timeline.png')
     # img = img.convert("RGBA")

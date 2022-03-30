@@ -4,9 +4,10 @@ import numpy as np
 import pandas as pd
 import dataframe_image as dfi
 from pandas import json_normalize
+import json
 
 #Size of the pitch in yards (!!!)
-def getMatchKPI(m_id, t1, t2, e_data, l_data):
+def getMatchKPI(m_id, t1, t2, e_data):
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
     
     t1_data =  df.loc[df['team_name'] == t1].set_index('id')
@@ -15,7 +16,7 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
     possession = []
 
     gdp_dict = {t1 : [],
-                'Match details': ['total_shots','total_passes','total_corners','total_freekicks','total_offside'],
+                'Match details': ['Goals','total_shots','total_passes','total_corners','total_freekicks','total_offside'],
                t2: []}
     
     total_shots = 0
@@ -24,6 +25,7 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
     total_freekicks = 0
     duration = 0
     total_offside = 0
+    goals = 0 
 
     for i, events in t1_data.iterrows():
         if (not pd.isna(events['duration'])):
@@ -31,6 +33,8 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
             
         if (events['type_name'] == "Shot"):
             total_shots = total_shots + 1
+            if(events['shot_outcome_name'] == "Goal"):
+                goals+=1
         elif (events['type_name'] == "Pass"):
             total_passes = total_passes + 1
             if (events['pass_type_name'] == "Corner"):
@@ -43,7 +47,7 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
             total_offside = total_offside + 1
     possession.append(duration)
             
-    gdp_dict[t1].extend([int(total_shots),total_passes,total_corners,total_freekicks,total_offside]) 
+    gdp_dict[t1].extend([goals,int(total_shots),total_passes,total_corners,total_freekicks,total_offside]) 
 
     total_shots = 0
     total_passes = 0
@@ -51,13 +55,15 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
     total_freekicks = 0
     duration = 0
     total_offside = 0
-
+    goals = 0
     for i, events in t2_data.iterrows():
         if (not pd.isna(events['duration'])):
             duration+=events['duration']
             
         if (events['type_name'] == "Shot"):
             total_shots = total_shots + 1
+            if(events['shot_outcome_name'] == "Goal"):
+                goals+=1
         elif (events['type_name'] == "Pass"):
             total_passes = total_passes + 1
             if (events['pass_type_name'] == "Corner"):
@@ -70,7 +76,7 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
             total_offside = total_offside + 1
    
             
-    gdp_dict[t2].extend([int(total_shots),total_passes,total_corners,total_freekicks,total_offside]) 
+    gdp_dict[t2].extend([goals,int(total_shots),total_passes,total_corners,total_freekicks,total_offside]) 
     possession.append(duration)
 
     totalPossession = sum(possession) 
@@ -81,6 +87,8 @@ def getMatchKPI(m_id, t1, t2, e_data, l_data):
     gdp_dict['Match details'].insert(0,"possession")
     data = pd.DataFrame(gdp_dict)
     data = data. set_index([ t1 ,'Match details',t2])
-    dfi.export(data, '/Users/atifsiddiqui/Desktop/soccerTact/dataframe.png')
-
-
+    dfi.export(data, 'dataframe.png')
+# import requests
+# l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
+# l_data = json.loads((requests.get(l_site)).text)
+# getMatchKPI("18245", 'Real Madrid', "Liverpool", l_data)
