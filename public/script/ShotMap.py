@@ -17,7 +17,7 @@ def generate_ShotXg(m_id,t1,t2,e_data,l_data):
     #Size of the pitch in yards (!!!)
     
     
-    pitch = VerticalPitch(half = True, pitch_type='statsbomb',axis=True, label=True,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
+    pitch = VerticalPitch(half = True, pitch_type='statsbomb',pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
     fig, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
     # get the nested structure into a dataframe 
     # store the dataframe in a dictionary with the match id as key (remove '.json' from string)
