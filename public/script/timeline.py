@@ -8,8 +8,9 @@ from pandas import json_normalize
 from PIL import Image
 from matplotlib.ticker import MultipleLocator
 from pyparsing import col
+from Number import getNumber
 
-def generate_timeline(m_id, t1, e_data, image):
+def generate_timeline(m_id, t1, e_data, l_data, image):
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    
     
     t1_data =  df.loc[df['team_name'] == t1].set_index('id')
@@ -22,11 +23,11 @@ def generate_timeline(m_id, t1, e_data, image):
         if (events['type_name'] == "Shot"):
             outcome=events['shot_outcome_name']
             if outcome  == 'Goal':
-                details.append(events['player_name'])
+                details.append(getNumber(m_id,l_data,events['player_name']))
                 eventNames.append('Goal')
                 minute.append(events['minute'])
         elif (events['type_name'] =='Substitution'):
-            name = 'Out: ' + events['player_name'] +'\nIn: ' + events['substitution_replacement_name']
+            name = 'Out: ' + getNumber(m_id,l_data,events['player_name']) +'\nIn: ' + getNumber(m_id,l_data,events['substitution_replacement_name'])
             details.append(name) 
             eventNames.append("Substitution")
             minute.append(events['minute'])
@@ -36,20 +37,20 @@ def generate_timeline(m_id, t1, e_data, image):
             minute.append(events['minute'])
         elif (events['type_name'] =='Foul Committed'):
             if (events['foul_committed_card_name'] == "Yellow Card"):
-                details.append(events['player_name']) 
+                details.append(getNumber(m_id,l_data,events['player_name']))
                 eventNames.append('Yellow Card') 
                 minute.append(events['minute'])
             elif (events['foul_committed_card_name'] == "Red Card"):
-                details.append(events['player_name']) 
+                details.append(getNumber(m_id,l_data,events['player_name'])) 
                 eventNames.append('Red Card') 
                 minute.append(events['minute'])
         elif(events['type_name']=='Bad Behaviour'):
             if (events['bad_behaviour_card_name'] == "Yellow Card"):
-                details.append(events['player_name']) 
+                details.append(getNumber(m_id,l_data,events['player_name'])) 
                 eventNames.append('Yellow Card') 
                 minute.append(events['minute'])
             elif (events['bad_behaviour_card_name'] == "Red Card"):
-                details.append(events['player_name']) 
+                details.append(getNumber(m_id,l_data,events['player_name'])) 
                 eventNames.append('Red Card') 
                 minute.append(events['minute'])
 
@@ -113,7 +114,7 @@ def generate_timeline(m_id, t1, e_data, image):
         # newax = fig.add_axes([d/100,l/10,0.2,0.2], zorder=1)
         # newax.imshow(im)
         ax.add_artist(ab)
-        ax.annotate(str(m) +"'", xy=(m, 0), xytext=(-3, np.sign(l)*40),
+        ax.annotate(str(m) +"'" + str(d), xy=(m, 0), xytext=(-3, np.sign(l)*40),
                     textcoords="offset points", va=va, ha="center", color="black")
 
 
@@ -129,11 +130,14 @@ def generate_timeline(m_id, t1, e_data, image):
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
     plt.savefig(image +'_timeline.png') 
-import requests
-import json
-l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
-e_data = json.loads((requests.get(l_site)).text)
-generate_timeline("18245", 'Real Madrid', e_data, "t1")
+# import requests
+# import json
+# e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
+# e_data = json.loads((requests.get(e_site)).text)
+# l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
+# l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
+
+# generate_timeline("18245", 'Real Madrid', e_data, l_data ,"t1")
 
     # img = Image.open('t1_timeline.png')
     # img = img.convert("RGBA")
