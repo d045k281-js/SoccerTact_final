@@ -24,7 +24,7 @@
           <div style="display: flex; justify-content: space-between;" class="player_select">
             <div>
               <div class="logo_name">
-              <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Away Team</h4>
+              <h4 style="color: black; margin: 0%; margin-bottom: 5px;" id="aname"></h4>
             <img  id="logoaway" style="height: 80px; width: 80px; border: 5px solid gold;"> 
             <br>
             </div>
@@ -51,6 +51,20 @@
      
 
      <script>
+             setTimeout(team1, 0);
+      
+      async function team1(){
+        const n= await fetch('../analysis/awayname.json');
+      const a_name = await n.json();
+      var aname= a_name["aname"];
+      
+      document.getElementById("aname").innerText=aname;
+      const response = await fetch('/script/s_d.json');
+      const names = await response.json();
+   
+       
+     
+      }
        var img= document.getElementById("myImg");
        function pass_flow(){
         img.src="../analysis/t2pass.png";
