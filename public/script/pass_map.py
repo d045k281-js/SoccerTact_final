@@ -63,7 +63,7 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
     
     
     bs_heatmap = pitch.bin_statistic(df_pass.x, df_pass.y, statistic='count', bins=bins)
-    hm = pitch.heatmap(bs_heatmap, ax=ax, cmap='Blues')
+    hm = pitch.heatmap(bs_heatmap, ax=ax, cmap='Reds')
 # plot the pass flow map with a single color ('black') and length of the arrow (5)
     fm = pitch.flow(df_pass.x, df_pass.y, df_pass.end_x, df_pass.end_y,
                 color='black', arrow_type='same',
@@ -85,7 +85,7 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
     
     
     bs_heatmap = pitch.bin_statistic(df_pass.x, df_pass.y, statistic='count', bins=bins)
-    hm = pitch.heatmap(bs_heatmap, ax=ax, cmap='Blues')
+    hm = pitch.heatmap(bs_heatmap, ax=ax, cmap='Reds')
 # plot the pass flow map with a single color ('black') and length of the arrow (5)
     fm = pitch.flow(df_pass.x, df_pass.y, df_pass.end_x, df_pass.end_y,
                 color='black', arrow_type='same',
