@@ -732,32 +732,53 @@ option{ border: 1px solid white;}
 }
 
 .name{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc6704), to(rgba(255, 94, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f3a682, rgba(247, 126, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fc6704), to(rgba(255, 94, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f3a682, rgba(247, 126, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
+  opacity: 0.8;
+  background-color: white;
+  border-radius: 25px;
 }
 .age{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc04b2), to(rgba(255, 0, 140, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #ea82f3, rgba(223, 45, 247, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  opacity: 0.8;
+  background-color: white;
+  border-radius: 25px;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fc04b2), to(rgba(255, 0, 140, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
+  /* background-image: linear-gradient(to bottom, #ea82f3, rgba(223, 45, 247, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
 }
 .DOB{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc0404), to(rgba(255, 0, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f38a82, rgba(247, 52, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  opacity: 0.8;
+  background-color: white;
+  border-radius: 25px;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fc0404), to(rgba(255, 0, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f38a82, rgba(247, 52, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
 }
 .Pos{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fce304), to(rgba(255, 217, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f3de82, rgba(247, 227, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  opacity: 0.8;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fce304), to(rgba(255, 217, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f3de82, rgba(247, 227, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
+  background-color: white;
+  border-radius: 25px;
 }
 .height{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc04b2), to(rgba(255, 0, 140, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #ea82f3, rgba(223, 45, 247, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  opacity: 0.8;
+  border-radius: 25px;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fc04b2), to(rgba(255, 0, 140, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #ea82f3, rgba(223, 45, 247, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
+  background-color: white;
 }
 .c_team{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc0404), to(rgba(255, 0, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f38a82, rgba(247, 52, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  opacity: 0.8;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fc0404), to(rgba(255, 0, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f38a82, rgba(247, 52, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
+  background-color: white;
+  border-radius: 25px;
 }
 .j_num{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fce304), to(rgba(255, 217, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
-  background-image: linear-gradient(to bottom, #f3de82, rgba(247, 227, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  opacity: 0.8;
+  
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#fce304), to(rgba(255, 217, 0, 0.966))), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg");
+  background-image: linear-gradient(to bottom, #f3de82, rgba(247, 227, 45, 0.952)), url("https://e0.365dm.com/20/05/2048x1152/skysports-liverpool-salah_5000679.jpg"); */
+  background-color: white;
 }
 
 .passes {
