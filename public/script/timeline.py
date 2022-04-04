@@ -129,7 +129,7 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     ax.get_xaxis().set_visible(False)
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
-    plt.savefig(image +'_timeline.png') 
+    plt.savefig(image +'_timeline.png', transparent=True)
 # import requests
 # import json
 # e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
@@ -137,7 +137,7 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
 # l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
 # l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
 
-# generate_timeline("18245", 'Real Madrid', e_data, l_data ,"t1")
+# generate_timeline("18245", 'Real Madrid', e_data, l_dat ,"t1")
 
     # img = Image.open('t1_timeline.png')
     # img = img.convert("RGBA")

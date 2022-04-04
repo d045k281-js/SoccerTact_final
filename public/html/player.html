@@ -2,17 +2,19 @@
 <html>
     <head>
       <base href="/"> 
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet"  media="screen" href="../css/style.css">
+      <link rel="stylesheet" media="print" href="../css/print.css" />
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/6.1.1/css/font-awesome.min.css" rel="stylesheet">
       <div class="print">
-      <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png">
-      <button>Print</button>
+      <img style="margin-left: 0px; max-width: 15%;" src="../images/SoccerTact_logo.png">
+      <button class="print-button" onclick="window.print()"><span class="print-icon"></span></button>
+        <button onclick="">back</button>
     </div>
     <br><br>
       <div style="display: flex; size: 10%;
    " >
       <img id="plyimg" style="size:100%; border: 2px solid black;">
-      <table border="3" bordercolor="black" style="width: 100%; background-color: red;" >
+      <table border="3" bordercolor="black" style="width: 100%; background-image: url(../images/collage-removebg.png);" >
         <tr>
             <th colspan="3" class="name"><span id="plyname">name</span>e</th> 
         </tr>
@@ -40,10 +42,10 @@
 
     </head>
 <body>
-  <div class="player_images" style="display: inline; display: flex;">
+  <div class="player_images" style="display: inline; display: flex; margin-top: 2%;">
    
-    <div  margin-left: 2%;><img id="myImg" style="height: 65%; width:80%;"  ></div>
-    <div  margin-left: 2%;><img id="myImg2" style="height: 65%; width:80%;"  ></div>
+    <div  margin-left: 2%;><img id="myImg" style="height: 400px; width:400px;"  ></div>
+    <div  ><img id="myImg2" style="height: 70%; width:80%; margin-left: 10%;"  ></div>
     <div class="player_buttons">
       <button class="passes" onclick="pass()"><b>Passes</b></button>
       <br>
