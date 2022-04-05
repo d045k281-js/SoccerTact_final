@@ -1,6 +1,8 @@
+
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+@media screen {
 html { 
   height:100%;
 }
@@ -155,22 +157,7 @@ body {
    width: 100%;
   /* <!-- border-radius: 25px; */
  }
- @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
-  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
-  p a, p a:visited { color: #444 !important; text-decoration: underline; }
-  p a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
-  tr, img { page-break-inside: avoid; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
-  .hide-on-print { display: none !important; }
-  .print-only { display: block !important; }
-}
+ 
  footer {
   text-align: left;
   color: #333;
@@ -184,6 +171,33 @@ body {
   border: 2px groove darkgrey;
   width: 500px;
 }
+#plyinfo{
+  width: 100%; background-image: url(../images/collage-removebg.png);
+}
+.player_images{
+  display: inline; display: flex; margin-top: 2%;
+}
+#plybox
+{
+  display: flex; 
+  size: 10%;
+}
+#plyimg{
+  size:100%; border: 2px solid black;
+}
+.title_anl{
+  display: none;
+}
+.myImg2{
+  height: 70%; width:80%; margin-left: 10%;
+}
+.img3{
+  display: none;
+}
+.myImg{
+  height: 400px; width:400px;
+}
+
  .container{
   display: flex;
   text-align: center;
@@ -1104,4 +1118,11 @@ button.print-button:hover .print-icon::before {
 button.print-button:hover .print-icon::after {
   height:120%;
   transition: height .2s .15s, border-width 0s .16s;
+}
+}
+
+@media print {
+  body {
+   background-color: black;
+  }
 }

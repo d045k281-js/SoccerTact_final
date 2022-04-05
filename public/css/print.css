@@ -1,35 +1,19 @@
 
+
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+
+@media print {
 html { 
   height:100%;
 }
 
 body {
-  margin:0;
+ margin:0px;
 }
 
-.bg {
-  animation:slide 30s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, red 50%,yellow 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
 
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
 
 .content {
   background-image:white;
@@ -158,22 +142,6 @@ body {
    width: 100%;
   /* <!-- border-radius: 25px; */
  }
- @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
-  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
-  p a, p a:visited { color: #444 !important; text-decoration: underline; }
-  p a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
-  tr, img { page-break-inside: avoid; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
-  .hide-on-print { display: none !important; }
-  .print-only { display: block !important; }
-}
  footer {
   text-align: left;
   color: #333;
@@ -455,6 +423,66 @@ option{ border: 1px solid white;}
   transition: right .4s,-webkit-transform 30s .2s linear;
   transition: right .4s,transform 30s .2s linear;
   transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.passes{
+    display: none;
+    
+}
+#playinfo{
+    
+    border: 2px solid black;
+}
+#plybox{
+    display: none;
+}
+.possesion{
+    display: none;
+}
+.shots{
+    display: none;
+}
+.print-button{
+    display: none;
+}
+.back-button{
+    display: none;
+}
+#plyimg{
+    width: 80px;
+    height: 75px;
+    
+}
+.img3{
+    margin-top: 15%;
+    display: inline;
+    margin-left: 10%;
+    height: 90%; 
+    width:90%;
+   
+}
+#plyinfo{
+    height: 200%;
+    width: 100%;
+}
+.player_images{
+    display: inline; display: flex; margin-top: 10%;
+  }
+#plybox{
+    display: flex; 
+    width: 100%;
+    height: 100%;
+
+}
+#plyimg{
+    size:50%; border: 2px solid black;
+}
+.myImg{
+
+    height: 90%; width:90%;
+}
+.myImg2{
+    margin-top: 10%;
+    height: 90%; width:90%; margin-left: 10%;
 }
 .heat:before, .heat:after {
   font-family: FontAwesome;
@@ -1107,4 +1135,5 @@ button.print-button:hover .print-icon::before {
 button.print-button:hover .print-icon::after {
   height:120%;
   transition: height .2s .15s, border-width 0s .16s;
+}
 }
