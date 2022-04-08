@@ -27,7 +27,7 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
                 eventNames.append('Goal')
                 minute.append(events['minute'])
         elif (events['type_name'] =='Substitution'):
-            name = 'Out: ' + getNumber(m_id,l_data,events['player_name']) +'\nIn: ' + getNumber(m_id,l_data,events['substitution_replacement_name'])
+            name = 'Out: ' + str(getNumber(m_id,l_data,events['player_name'])) +'\nIn: ' + str(getNumber(m_id,l_data,events['substitution_replacement_name']))
             details.append(name) 
             eventNames.append("Substitution")
             minute.append(events['minute'])
@@ -114,7 +114,7 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
         # newax = fig.add_axes([d/100,l/10,0.2,0.2], zorder=1)
         # newax.imshow(im)
         ax.add_artist(ab)
-        ax.annotate(str(m) +"'" + str(d), xy=(m, 0), xytext=(-3, np.sign(l)*40),
+        ax.annotate(str(m) +"'\n" + str(d), xy=(m, 0), xytext=(-3, np.sign(l)*40),
                     textcoords="offset points", va=va, ha="center", color="black")
 
 
@@ -130,14 +130,14 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
     plt.savefig(image +'_timeline.png') 
-# import requests
-# import json
-# e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
-# e_data = json.loads((requests.get(e_site)).text)
-# l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
-# l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
+import requests
+import json
+e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
+e_data = json.loads((requests.get(e_site)).text)
+l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
+l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
 
-# generate_timeline("18245", 'Real Madrid', e_data, l_data ,"t1")
+generate_timeline("7545", 'Real Madrid', e_data, l_data ,"t1")
 
     # img = Image.open('t1_timeline.png')
     # img = img.convert("RGBA")
