@@ -42,7 +42,7 @@ def generate_ShotXg(m_id,t1,t2,e_data,l_data):
         else:
            shotCircle2= pitch.scatter(x, y, marker='football', s= circleSize, ax=ax)     
             
-    ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
+    # ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
     #ax.set_title(f'{t1} Shot Map VS {t2}', fontsize=15, color = "black")
     fig.savefig('./public/analysis/t1_shot.png', bbox_inches = 'tight')
 
@@ -58,6 +58,6 @@ def generate_ShotXg(m_id,t1,t2,e_data,l_data):
         else:
            shotCircle2= pitch.scatter(x, y, marker='football', s= circleSize, ax=ax)     
             
-    ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
+    # ax.legend(facecolor='#22312b', edgecolor='None', fontsize=5, loc='upper left', handlelength=4)
     #ax.set_title(f'{t2} Shot Map VS {t1}', fontsize=15, color = "black")
     fig.savefig('./public/analysis/t2_shot.png', bbox_inches = 'tight')

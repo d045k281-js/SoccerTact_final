@@ -6,7 +6,7 @@
       <link rel="stylesheet" media="print" href="../css/print.css" />
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/6.1.1/css/font-awesome.min.css" rel="stylesheet">
       <div class="print">
-      <img style="margin-left: 0px; max-width: 15%;" src="../images/SoccerTact_logo.png">
+        <a href="/"><img style="margin-left: 0px; max-width: 20%;" src="../images/SoccerTact_logo.png"></a>
 
         <button  class="back-button" onclick=window.history.go(-2) >Team Analysis</button>
         <button class="print-button" onclick="window.print()" style=""><span class="print-icon"></span></button>
@@ -45,12 +45,12 @@
 <body>
   <div class="player_images" style="">
    
-    <div  margin-left: 2%;><img id="myImg" class="myImg" style=""  >   
+    <div  margin-left: 2%;><img  title="KPI" id="myImg" class="myImg" style=""  >   
        <img class="img3" src="../ply_analysis/poss.png " >
       
       <!-- <h1 class="img3"> Possesion Analysis</h1> -->
      </div>
-    <div  ><img  class="myImg2" id="myImg2" style=""  >
+    <div  ><img  title="Pass analysis" class="myImg2" id="myImg2" style=""  >
     
       <img class="img3" src="../ply_analysis/shot.png " >
     
@@ -112,12 +112,15 @@
    var img2= document.getElementById("myImg2");
   function pass(){
     img2.src="../ply_analysis/pass.png";
+    img2.title="Pass Analysis";
   }
   function shot(){
     img2.src="../ply_analysis/shot.png";
+    img2.title="Shot Analysis";
   }
   function poss(){
   img2.src="../ply_analysis/poss.png";
+  img2.title="Possesion Analysis"
   }
         img.src="../ply_analysis/KPI.png";
         img2.src="../ply_analysis/pass.png";
@@ -136,7 +139,8 @@ img.onerror = function(e) {
     
 
 </body>
-
+<!-- 
+<footer> <small>&copy; Copyright 2022, Example Corporation</small> </footer>  -->
 
 
 </html>

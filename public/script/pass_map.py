@@ -90,7 +90,7 @@ def generate_pass(m_id,t1,t2,e_data,l_data):
     fm = pitch.flow(df_pass.x, df_pass.y, df_pass.end_x, df_pass.end_y,
                 color='black', arrow_type='same',
                 arrow_length=5, bins=bins, ax=ax)
-    ax.set_title(f'{t2} pass flow map vs {t1}', fontsize=12, color = "red")
+    # ax.set_title(f'{t2} pass flow map vs {t1}', fontsize=12, color = "red")
     fig.savefig('./public/analysis/t2pass.png', bbox_inches = 'tight')
 
 
@@ -193,9 +193,9 @@ def passing_network(m_id,t1,t2,e_data,l_data):
     axs['endnote'].set_xlim(0, 1)
     axs['endnote'].set_ylim(0, 1)
 
-    axs['title'].text(0.5, 0.7, f'{t1} Passing Network VS {t2}', color='#c7d5cc',
-                  va='center', ha='center', fontsize=30)
-    fig.savefig("./public/analysis/t1pn.png")
+    # axs['title'].text(0.5, 0.7, f'{t1} Passing Network VS {t2}', color='#c7d5cc',
+    #               va='center', ha='center', fontsize=30)
+    fig.savefig("./public/analysis/t1pn.png", bbox_inches = 'tight')
 
 
     t2_data = df.loc[df['team_name'] == t2].set_index('id')
@@ -289,7 +289,7 @@ def passing_network(m_id,t1,t2,e_data,l_data):
     axs['endnote'].set_xlim(0, 1)
     axs['endnote'].set_ylim(0, 1)
 
-    axs['title'].text(0.5, 0.7, f'{t2} Passing Network VS {t1}', color='#c7d5cc',
-                  va='center', ha='center', fontsize=30)
+    # axs['title'].text(0.5, 0.7, f'{t2} Passing Network VS {t1}', color='#c7d5cc',
+    #               va='center', ha='center', fontsize=30)
     fig.savefig('./public/analysis/t2_PN.png', bbox_inches = 'tight')
     

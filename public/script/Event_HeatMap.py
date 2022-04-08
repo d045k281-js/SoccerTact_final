@@ -54,14 +54,18 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
     labels2 = pitch.label_heatmap(bin_statistic, color='#f4edf0', fontsize=18,
                               ax=ax, ha='center', va='center',
                               str_format='{:.0%}', path_effects=path_eff)
-    ax.set_title(f'{t1} {event_type} Map VS {t2}', fontsize=12, color = "black")
+    # ax.set_title(f'{t1} {event_type} Map VS {t2}', fontsize=12, color = "black")
     if (event_type == "Duel"):
-        fig.savefig('./public/analysis/t1_duel.png')
+        fig.savefig('./public/analysis/t1_duel.png', bbox_inches = 'tight')
     elif (event_type == "Pass"):
-        fig.savefig('./public/analysis/t1_pass.png')
+        fig.savefig('./public/analysis/t1_pass.png', bbox_inches = 'tight')
     elif (event_type == "Pressure"):
-         fig.savefig('./public/analysis/t1_pressure.png')
+         fig.savefig('./public/analysis/t1_pressure.png', bbox_inches = 'tight')
 
+      
+    pitch2 = Pitch(pitch_type='statsbomb', line_zorder=2, pitch_color='#f4edf0')
+    fig, ax = pitch2.draw(figsize=(10,8))
+    fig.set_facecolor('#f4edf0')
 
     for i, event in t2_event_heat.iterrows():
         x=event['location'][0]
@@ -69,14 +73,14 @@ def generate_HeatMap(m_id, t1, t2, e_data, l_data, event_type):
         heat.append([x,y])
     df = pd.DataFrame(heat, columns = ['X', 'Y'])
     
-    bin_x = np.linspace(pitch.dim.left, pitch.dim.right, num=7)
-    bin_y = np.sort(np.array([pitch.dim.bottom, pitch.dim.six_yard_bottom,
-                          pitch.dim.six_yard_top, pitch.dim.top]))
+    bin_x = np.linspace(pitch2.dim.left, pitch2.dim.right, num=7)
+    bin_y = np.sort(np.array([pitch2.dim.bottom, pitch2.dim.six_yard_bottom,
+                          pitch2.dim.six_yard_top, pitch2.dim.top]))
     
-    bin_statistic = pitch.bin_statistic(df.X, df.Y, statistic='count', bins=(bin_x, bin_y), normalize=True )
+    bin_statistic1 = pitch2.bin_statistic(df.X, df.Y, statistic='count', bins=(bin_x, bin_y), normalize=True )
     
-    pitch.heatmap(bin_statistic, ax=ax, cmap='Reds', edgecolor='#f9f9f9')
-    labels2 = pitch.label_heatmap(bin_statistic, color='#f4edf0', fontsize=18,
+    pitch2.heatmap(bin_statistic1, ax=ax, cmap='Reds', edgecolor='#f9f9f9')
+    labels2 = pitch2.label_heatmap(bin_statistic1, color='#f4edf0', fontsize=18,
                               ax=ax, ha='center', va='center',
                               str_format='{:.0%}', path_effects=path_eff)
     #ax.set_title(f'{t2} {event_type} Map VS {t1}', fontsize=12, color = "black")

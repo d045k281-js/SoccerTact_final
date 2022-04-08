@@ -4,6 +4,8 @@ from pass_map import passing_network
 from Event_HeatMap import generate_HeatMap
 from timeline import generate_timeline
 from team_KPI import getMatchKPI
+import warnings
+warnings.filterwarnings("ignore")
 
 import sys
 import requests
