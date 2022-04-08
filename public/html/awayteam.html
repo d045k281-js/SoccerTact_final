@@ -14,8 +14,9 @@
     
   <div class=”container”>
     <div class="print">
-      <img style="margin-left: 0px; max-width: 10%;" src="../images/SoccerTact_logo.png">
-      <button>Print</button>
+      <img style="margin-left: 0px; max-width: 20%;" src="../images/SoccerTact_logo.png">
+      <button  class="back-button" onclick=window.history.go(-2) >Home</button>
+      <button class="print-button" onclick="window.print()" style=""><span class="print-icon"></span></button>
     </div>
     <br><br>   
             
@@ -24,8 +25,8 @@
           <div style="display: flex; justify-content: space-between;" class="player_select">
             <div>
               <div class="logo_name">
-              <h4 style="color: white; margin: 0%; margin-bottom: 5px;">Away Team</h4>
-            <img  id="logoaway" style="height: 80px; width: 80px; border: 5px solid gold;"> 
+              <h4 style="color: black; margin: 0%; margin-bottom: 5px;" id="aname"></h4>
+            <img  id="logoaway" style="height: 100px; width: 100px; border: 5px solid gold;"> 
             <br>
             </div>
             <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; height: 405px;"class="away_team_select" id="away_team_select">
@@ -35,7 +36,7 @@
             
             </div>
             
-              <div style="margin-top:5% "><img id="myImg" width="600px"   ></div>
+              <div style="margin-top:8% "><img id="myImg" width="600px"   ></div>
               <div class="analysis_buttons">
                 <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
                 <button style="width: 261px; height: 70px;" class="five" onclick="Shot_map()">Shot <b>Map</b></button>
@@ -51,6 +52,20 @@
      
 
      <script>
+             setTimeout(team1, 0);
+      
+      async function team1(){
+        const n= await fetch('../analysis/awayname.json');
+      const a_name = await n.json();
+      var aname= a_name["aname"];
+      
+      document.getElementById("aname").innerText=aname;
+      const response = await fetch('/script/s_d.json');
+      const names = await response.json();
+   
+       
+     
+      }
        var img= document.getElementById("myImg");
        function pass_flow(){
         img.src="../analysis/t2pass.png";

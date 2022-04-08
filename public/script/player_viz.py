@@ -99,9 +99,9 @@ def generate_passMap(m_id,t1,t2,e_data,l_data, name):
 
 def generate_possesion(m_id,t1,t2,e_data,l_data, name):
     flamingo_cmap = LinearSegmentedColormap.from_list("Flamingo - 10 colors",
-                                                  ['#e3aca7', '#c03a1d'], N=10)
-    pitch = Pitch(line_color='#000009', line_zorder=2, pitch_color='white')
-    fig, ax = pitch.draw(figsize=(10, 8))
+                                                  ['#c20808', '#edcf09'], N=10)
+    pitch = Pitch(pitch_type='statsbomb',axis=False, label=False,pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
+    fig, ax = pitch.draw(figsize=(13, 8))
    
     
     df = json_normalize(e_data, sep = "_").assign(match_id = m_id)    

@@ -10,6 +10,8 @@ import sys
 import requests
 import json
 from pandas import json_normalize
+import warnings
+warnings.filterwarnings("ignore")
 
 m_id = str(sys.argv[1])
 player_name = str(sys.argv[2])

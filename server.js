@@ -91,6 +91,7 @@ app.post("/play", upload.none(), (req, res) => {
   });
  
   console.log(data)
+  main=spawn("python", ["./public/script/team_KPI.py", data]);
   main=spawn("python", ["./public/script/main.py", data]);
   main.stderr.on('data',(data)=>{
     //Here data is of type buffer

@@ -1,36 +1,19 @@
 
+
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
-@media screen {
+
+@media print {
 html { 
   height:100%;
 }
 
 body {
-  margin:0;
+ margin:0px;
 }
 
-.bg {
-  animation:slide 30s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, red 50%,yellow 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
 
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
 
 .content {
   background-image:white;
@@ -43,6 +26,7 @@ body {
   text-align:center;
   top:50%;
   transform:translate(-50%, -50%);
+  
 }
 
 
@@ -71,7 +55,8 @@ body {
       }
       
     .SoccerTact_Logo{
-      background-image: url(../images/SoccerTact_logo.png);
+      /* background-image: url(../images/SoccerTact_logo.png); */
+      display: none;
     }
 
       .play{
@@ -157,7 +142,6 @@ body {
    width: 100%;
   /* <!-- border-radius: 25px; */
  }
- 
  footer {
   text-align: left;
   color: #333;
@@ -171,33 +155,6 @@ body {
   border: 2px groove darkgrey;
   width: 500px;
 }
-#plyinfo{
-  width: 100%; background-image: url(../images/collage-removebg.png);
-}
-.player_images{
-  display: inline; display: flex; margin-top: 2%;
-}
-#plybox
-{
-  display: flex; 
-  size: 10%;
-}
-#plyimg{
-  size:100%; border: 2px solid black;
-}
-.title_anl{
-  display: none;
-}
-.myImg2{
-  height: 70%; width:80%; margin-left: 10%;
-}
-.img3{
-  display: none;
-}
-.myImg{
-  height: 400px; width:400px;
-}
-
  .container{
   display: flex;
   text-align: center;
@@ -466,6 +423,66 @@ option{ border: 1px solid white;}
   transition: right .4s,-webkit-transform 30s .2s linear;
   transition: right .4s,transform 30s .2s linear;
   transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.passes{
+    display: none;
+    
+}
+#playinfo{
+    
+    border: 2px solid black;
+}
+#plybox{
+    display: none;
+}
+.possesion{
+    display: none;
+}
+.shots{
+    display: none;
+}
+.print-button{
+    display: none;
+}
+.back-button{
+    display: none;
+}
+#plyimg{
+    width: 80px;
+    height: 75px;
+    
+}
+.img3{
+    margin-top: 15%;
+    display: inline;
+    margin-left: 10%;
+    height: 90%; 
+    width:90%;
+   
+}
+#plyinfo{
+    height: 200%;
+    width: 100%;
+}
+.player_images{
+    display: inline; display: flex; margin-top: 10%;
+  }
+#plybox{
+    display: flex; 
+    width: 100%;
+    height: 100%;
+
+}
+#plyimg{
+    size:50%; border: 2px solid black;
+}
+.myImg{
+
+    height: 90%; width:90%;
+}
+.myImg2{
+    margin-top: 10%;
+    height: 90%; width:90%; margin-left: 10%;
 }
 .heat:before, .heat:after {
   font-family: FontAwesome;
@@ -1119,10 +1136,4 @@ button.print-button:hover .print-icon::after {
   height:120%;
   transition: height .2s .15s, border-width 0s .16s;
 }
-}
-
-@media print {
-  body {
-   background-color: black;
-  }
 }
