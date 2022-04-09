@@ -62,10 +62,11 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     print (levels)
     # # Create figure and plot a stem plot with the date
     fig, ax = plt.subplots(figsize=(10, 6),  constrained_layout=True)
-    ax.set_facecolor("white")
+    ax.plot(minute, np.zeros_like(minute), "-o", linewidth=3) 
+    #ax.set_facecolor("white")
     # ax.set(title="Real Madrid")
     plt.ylim(-7,7)
-    markerline, stemline, baseline = ax.stem(minute, levels)
+    #markerline, stemline, baseline = ax.stem(minute, levels)
 
     #plt.setp(markerline, mec="k", mfc="w", zorder=3)
 
@@ -130,14 +131,14 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
     plt.savefig(image +'_timeline.png', transparent=True)
-# import requests
-# import json
-# e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
-# e_data = json.loads((requests.get(e_site)).text)
-# l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
-# l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
+import requests
+import json
+e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
+e_data = json.loads((requests.get(e_site)).text)
+l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
+l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
 
-# generate_timeline("18245", 'Real Madrid', e_data, l_dat ,"t1")
+generate_timeline("18245", 'Real Madrid', e_data, l_data ,"t1")
 
     # img = Image.open('t1_timeline.png')
     # img = img.convert("RGBA")

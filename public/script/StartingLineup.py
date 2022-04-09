@@ -1,6 +1,7 @@
 import sys
 import requests
 import json
+import matplotlib.pyplot as plt
 from pandas import json_normalize
 from mplsoccer import Pitch, VerticalPitch, FontManager
 from mplsoccer.statsbomb import read_event, EVENT_SLUG
@@ -34,17 +35,28 @@ def lineup(m_id,t1, l_data):
         '25' : [97,40],
 
     }
-    pitch = VerticalPitch(half = False, pitch_type='statsbomb',pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
+    
+    pitch = Pitch(half = False, pitch_type='statsbomb',pitch_color='grass', line_color='white', stripe=True)  # showing axis labels is optional
     fig, ax = pitch.draw(figsize=(10, 8), constrained_layout=False, tight_layout=True) 
     df = json_normalize(l_data, sep = "_").assign(match_id = m_id)  
     t1_data =  df.loc[df['team_name'] == t1].set_index('team_id')
-    print (t1_data)  
     for x in t1_data['lineup']:
         #print(df['team_name'])
         for y in x:
             for variable in y['positions']:
                 if variable['start_reason'] == "Starting XI":
-                    annotation = ax.annotate(str(y['jersey_number']),(posToCoord[str(variable['position_id'])][1],posToCoord[str(variable['position_id'])][0]), fontsize=30, ha='center')
+                    sc1 = pitch.scatter(posToCoord[str(variable['position_id'])][0], posToCoord[str(variable['position_id'])][1]-2,
+                    # size varies between 100 and 1900 (points squared)
+                    s=1550,
+                    edgecolors='#606060',  # give the markers a charcoal border
+                    c='#FFFFFF',  # no facecolor for the markers
+                    # for other markers types see: https://matplotlib.org/api/markers_api.html
+                    marker='o',
+                    ax=ax)
+                    
+                    annotation = ax.annotate(str(y['jersey_number']),(posToCoord[str(variable['position_id'])][0],
+                    posToCoord[str(variable['position_id'])][1]), fontsize=30, ha='center')
+                    #ax2 = add_image(image, fig, left=0.054, bottom=0.84, width=0.08, interpolation='hanning')
     
     fig.savefig('lineup.png', bbox_inches = 'tight')
 import requests
