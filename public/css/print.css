@@ -199,20 +199,20 @@ body {
 }
 
 .home_team_select{
- overflow: auto;
-
- font-size: 20px;
- width: 25vw;
- height:auto;
- color: white;
- background-color: #0a1215;
- border: 2px solid white;
+  height:auto;
+  right: 0px;
+  font-size: 20px;
+  width: 25vw;
+  height: 500px;
+  color: white;
+  background-color: #0a1215;
+  border: 2px solid white;
 
  
 }
 
 .away_team_select{
- overflow: auto;
+  height:auto;
  right: 0px;
  font-size: 20px;
  width: 25vw;
@@ -246,21 +246,7 @@ option{ border: 1px solid white;}
   align-items: center;
 }
 .five {
-  border: none;
-  border-radius: 4px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
-  overflow: hidden;
-  padding: 15px 50px 20px 70px;
-  margin-bottom: 5px;
-  font-size: 20px;
-  position: relative;
-  color: white;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: background-position .7s,box-shadow .4s;
-  transition: background-position .7s,box-shadow .4s;
-  background-size: 110%;
-  font-family: 'Oswald', sans-serif;
+ display: none;
 }
 .five:hover {
   background-position: 0% 30%;
@@ -373,57 +359,15 @@ option{ border: 1px solid white;}
 }
 
 .pass {
-  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #b60e0e;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#eb0c0c), to(rgba(154, 40, 87, 0.24))), url("https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg");
-  background-image: linear-gradient(to bottom, #d60812, rgba(154, 40, 87, 0.24)), url("https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg");
-}
-.pass:hover {
-  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #db0711;
-}
-.pass:hover:after {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-.pass:hover:before {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-.pass:after, .pass:before {
-}
-.pass b {
-  color: #fd0000;
-  font-weight: 700;
+  display: none;
 }
 
 
 
 .heat {
-  border: none;
-  border-radius: 4px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
-  overflow: hidden;
-  padding: 15px 50px 20px 70px;
-  margin-bottom: 5px;
-  font-size: 20px;
-  position: relative;
-  color: white;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: background-position .7s,box-shadow .4s;
-  transition: background-position .7s,box-shadow .4s;
-  background-size: 110%;
-  font-family: 'Oswald', sans-serif;
+  display: none;
 }
-.heat:hover {
-  background-position: 0% 30%;
-}
-.heat:hover:after {
-  right: -40px;
-  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
-  transition: right .4s,-webkit-transform 30s .2s linear;
-  transition: right .4s,transform 30s .2s linear;
-  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
-}
+
 .passes{
     display: none;
     
@@ -459,6 +403,9 @@ option{ border: 1px solid white;}
     height: 90%; 
     width:90%;
    
+}
+.analysis_buttons{
+  display: none;
 }
 #plyinfo{
     height: 200%;
@@ -536,6 +483,7 @@ option{ border: 1px solid white;}
   justify-content: space-evenly;
 }
 .network {
+  display: none;
   border: none;
   border-radius: 4px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
@@ -659,6 +607,7 @@ option{ border: 1px solid white;}
 }
 
 .duel {
+  display: none;
   box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #21960a;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#3fdb2b), to(rgba(154, 40, 87, 0.24))), url("https://thumbs.dreamstime.com/b/football-soccer-field-heat-map-moving-location-player-game-statistics-strategy-145507787.jpg");
   background-image: linear-gradient(to bottom, #40b91b, rgba(154, 40, 87, 0.24)), url("https://thumbs.dreamstime.com/b/football-soccer-field-heat-map-moving-location-player-game-statistics-strategy-145507787.jpg");
@@ -682,6 +631,7 @@ option{ border: 1px solid white;}
 }
 
 .pressure {
+  display: none;
   border: none;
   border-radius: 4px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
