@@ -211,6 +211,29 @@ body {
  
 }
 
+.passimg{
+  display: inline;
+  width:500px;
+  height: 400px;
+  /* margin-top: 10%; */
+}
+.teamimg{
+  display: inline;
+  width:500px;
+  height: 400px;
+  margin-top: 10%;
+  margin-left: 5%;
+
+}
+#timeline{
+  width: 450px; 
+  height: 140px; 
+  object-fit: cover;
+}
+.timeline{
+  display: none;
+}
+
 .away_team_select{
   height:auto;
  right: 0px;

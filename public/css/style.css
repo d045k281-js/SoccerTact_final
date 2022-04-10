@@ -197,7 +197,19 @@ body {
 .myImg{
   height: 400px; width:400px;
 }
+.teamimg{
+  width:600px;
+   height:400px; 
 
+}
+#timeline{
+width: 600px; 
+                    height: 140px; 
+                    object-fit: cover;
+}
+.passimg{
+  display: none;
+}
  .container{
   display: flex;
   text-align: center;
