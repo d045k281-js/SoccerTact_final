@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <head>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet"  media="screen" href="../css/style.css">
+  <link rel="stylesheet" media="print" href="../css/print.css" />
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     
@@ -33,14 +34,34 @@
             <img  id="logoaway" style="height: 100px; width: 100px; border: 5px solid gold;"> 
             <br>
             </div>
-            <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; height: 405px;"class="away_team_select" id="away_team_select">
+            <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; "class="away_team_select" id="away_team_select">
               <option style="background-color: gold; color: white;"id="away_players" selected disabled>Away Team</option>
               
             </select>
-            
+            <br> <br>
+            <img class="passimg" src="../analysis/t1pn.png"  >
+            <br> <br>
+            <img class="passimg" src="../analysis/t1_pressure.png" style="margin-top: 30%;">
+            <br> <br>
+            <img class="passimg" src="../analysis/t1_duel.png" style="margin-top: 20%;">
             </div>
             
-              <div style="margin-top:8% "><img id="myImg" width="600px"   ></div>
+              <div style="">
+                <div style="top:10%"> <img class="timeline" id="timeline" src="../analysis/t2_timeline.png" style="
+                
+                  " ></div>
+                
+                  <img class="teamimg" id="myImg" >
+                  <br> <br>
+                  <img class="passimg" src="../analysis/t1_pass.png" style="margin-left: 5%; margin-top: 10%;">
+                  <br> <br>
+                  <img class="passimg" src="../analysis/t1_shot.png" style="margin-left: 5%; margin-top: 30%;">
+                  <br> <br>
+                
+                  <img class="passimg" src="../analysis/t1pass.png"style="margin-left: 5%; margin-top: 20%;">
+                
+                
+                </div>
               <div class="analysis_buttons">
                 <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
                 <button style="width: 261px; height: 70px;" class="five" onclick="Shot_map()">Shot <b>Map</b></button>
@@ -101,7 +122,8 @@
        setTimeout(awayply, 0);
 
         
-        img.src="../analysis/home.png";
+        img.src="../script/lineup.png";
+        
 
 img.onload = function(e){
     

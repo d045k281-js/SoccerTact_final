@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <head>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet"  media="screen" href="../css/style.css">
+  <link rel="stylesheet" media="print" href="../css/print.css" />
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     
@@ -34,14 +35,20 @@
                 <img  id="logohome" style="height: 100px; width: 100px; border: 5px solid red;"> 
                 <br>
                 </div>
-                <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; height: 405px;"class="home_team_select" id="home_team_select">
+                <select style="background-color:rgba(0, 0, 0, 0.5); width: 330px; text-align-last:center; "class="home_team_select" id="home_team_select">
                   <option style="background-color: red; color: white;"id="home_players" selected disabled>Home Team</option>
                   
                 </select>
                 
                 </div>
+        
                 
-                  <div style="margin-top:5% "><img id="myImg" width="600px"   ></div>
+                  <div >
+                   <div style="top:10%"> <img src="../analysis/t1_timeline.png" id="timeline" >
+                   
+                    </div>
+                    <img id="myImg" class="teamimg" ></div>
+                    
                   <div class="analysis_buttons">
                     <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
                     <button style="width: 261px; height: 70px;" class="five" onclick="Shot_map()">Shot <b>Map</b></button>

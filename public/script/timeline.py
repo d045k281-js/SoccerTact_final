@@ -1,5 +1,6 @@
 from turtle import color
 import matplotlib.pyplot as plt
+from matplotlib.transforms import Bbox
 import numpy as np
 import matplotlib.dates as mdates
 from matplotlib.offsetbox import (TextArea, DrawingArea, OffsetImage,
@@ -62,10 +63,11 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     print (levels)
     # # Create figure and plot a stem plot with the date
     fig, ax = plt.subplots(figsize=(10, 6),  constrained_layout=True)
-    ax.set_facecolor("white")
+    ax.plot(minute, np.zeros_like(minute), "-o", linewidth=3) 
+    #ax.set_facecolor("white")
     # ax.set(title="Real Madrid")
     plt.ylim(-7,7)
-    markerline, stemline, baseline = ax.stem(minute, levels)
+    #markerline, stemline, baseline = ax.stem(minute, levels)
 
     #plt.setp(markerline, mec="k", mfc="w", zorder=3)
 
@@ -73,19 +75,19 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     #markerline.set_ydata(np.zeros(len(dates)))
 
     # annotate lines
-    sb = plt.imread('../images/soccer-ball.png') 
+    sb = plt.imread('./public/images/soccer-ball.png') 
     goal = OffsetImage(sb, zoom=0.04)
     goal.image.axes = ax
-    ko = plt.imread('../images/kickoff.png') 
+    ko = plt.imread('./public/images/kickoff.png') 
     kick =  OffsetImage(ko, zoom=0.03)
     kick.image.axes = ax
-    s = plt.imread('../images/substitution.jpg') 
+    s = plt.imread('./public/images/substitution.jpg') 
     sub =  OffsetImage(s, zoom=0.03)
     sub.image.axes = ax
-    yc = plt.imread('../images/Yellowcard.png') 
+    yc = plt.imread('./public/images/Yellowcard.png') 
     yellow =  OffsetImage(yc, zoom=0.01)
     yellow.image.axes = ax
-    rc = plt.imread('../images/Redcard.png') 
+    rc = plt.imread('./public/images/Redcard.png') 
     red =  OffsetImage(rc, zoom=0.01)
     red.image.axes = ax
 
@@ -129,7 +131,7 @@ def generate_timeline(m_id, t1, e_data, l_data, image):
     ax.get_xaxis().set_visible(False)
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
-    plt.savefig(image +'_timeline.png', transparent=True)
+    plt.savefig('./public/analysis/'+image +'_timeline.png', transparent=True, bbox_inches="tight")
 # import requests
 # import json
 # e_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/18245.json"
