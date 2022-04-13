@@ -4,11 +4,14 @@
       <base href="/"> 
       <link rel="stylesheet"  media="screen" href="../css/style.css">
       <link rel="stylesheet" media="print" href="../css/print.css" />
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/6.1.1/css/font-awesome.min.css" rel="stylesheet">
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
       <div class="print">
         <a href="/"><img style="margin-left: 0px; max-width: 20%;" src="../images/SoccerTact_logo.png"></a>
-
-        <button  class="back-button" onclick=window.history.go(-2) >Team Analysis</button>
+     <div class="item">
+        <button class="back" onclick=window.history.go(-2)><b style="color: black;">Team Analysis</b> 
+          <i class="fa fa-long-arrow-left arrow1" aria-hidden="true"></i>
+        </button>
+        </div>
         <button class="print-button" onclick="window.print()" style=""><span class="print-icon"></span></button>
     </div>
     <br><br>
@@ -47,15 +50,12 @@
    
     <div  margin-left: 2%;><img  title="KPI" id="myImg" class="myImg" style=""  >   
        <img class="img3" src="../ply_analysis/poss.png " >
-      
-      <!-- <h1 class="img3"> Possesion Analysis</h1> -->
+      <h1 class="tagsP" style="margin-left: 33%;"> Possesion Analysis</h1> 
      </div>
     <div  ><img  title="Pass analysis" class="myImg2" id="myImg2" style=""  >
-    
+      <h1 class="tagsP" style="margin-left: 40%;"> Pass Analysis</h1> 
       <img class="img3" src="../ply_analysis/shot.png " >
-    
-
-    <!-- <h1 class="img3"> Shots Analysis</h1> -->
+      <h1 class="tagsP" style="margin-left: 40%;"> Shots Analysis</h1>
     </div>
     <div class="player_buttons">
       <button class="passes" onclick="pass()"><b>Passes</b></button>

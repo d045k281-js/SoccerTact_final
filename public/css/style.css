@@ -209,6 +209,13 @@ width: 600px;
 .passimg{
   display: none;
 }
+.tags{
+  display: none;
+}
+.tagsP{
+  display: none;
+}
+
  .container{
   display: flex;
   text-align: center;
@@ -1138,14 +1145,14 @@ button.print-button:hover .print-icon::after {
 }
 
 .item {
-  width: 100px;
+  width: 180px;
   height: 50px;
   margin: 10px;
   position: relative;
 }
 
 .back {
-  width: 100%;
+  width: 180px;
   padding: 15px;
   background: white;
   transition: background 0.5s ease;

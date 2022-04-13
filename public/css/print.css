@@ -39,8 +39,6 @@ body {
   }
 }
   h1 {
-  
-    
     font-size: 2.5em;
     color: red;
     }
@@ -216,6 +214,13 @@ body {
   width:500px;
   height: 400px;
   /* margin-top: 10%; */
+}
+.tags{
+  display: inline;
+}
+.tagsP{
+  display: inline;
+  font-size: larger;
 }
 .teamimg{
   display: inline;
