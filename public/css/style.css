@@ -1149,6 +1149,7 @@ button.print-button:hover .print-icon::after {
   height: 50px;
   margin: 10px;
   position: relative;
+  margin-left: auto;
 }
 
 .back {
