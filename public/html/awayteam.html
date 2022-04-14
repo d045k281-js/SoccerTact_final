@@ -144,18 +144,21 @@ img.onerror = function(e) {
       setTimeout(awayPlayers, 0.01);
       async function awayPlayers(){
         const response = await fetch("../analysis/away_line.json");
+        const num = await fetch("../analysis/away_Num.json");
         const players = await response.json();
+        const plynum=await num.json();
         let away_players_data = players;
+        let away_players_num= plynum;
         // console.log(away_players_data);
         for (i = 0; i < away_players_data.length; i++) {
           var mySelect = document.getElementById("away_team_select");
           mySelect.setAttribute("size", mySelect.childElementCount);
           var newOption = document.createElement("option");
-          newOption.value = away_players_data[i];
+          newOption.value =  plynum[i]+":"+away_players_data[i];
           if (typeof newOption.textContent === "undefined") {
-            newOption.innerText = away_players_data[i];
+            newOption.innerText = plynum[i]+":"+away_players_data[i];
           } else {
-            newOption.textContent = away_players_data[i];
+            newOption.textContent = plynum[i]+":"+ away_players_data[i];
           }
           mySelect.appendChild(newOption);
          

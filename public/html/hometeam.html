@@ -68,9 +68,12 @@
       
       async function team1(){
         const n= await fetch('../analysis/homename.json');
+        // const num= await fetch('../analysis/home_Num.json');
+
       const h_name = await n.json();
+      // const h_num= await num.json();
       var hname= h_name["hname"];
-      
+     
       document.getElementById("hname").innerText=hname;
       // document.getElementById("aname").innerText=aname;
       const response = await fetch('/script/s_d.json');
@@ -134,7 +137,10 @@ img.onerror = function(e) {
     setTimeout(homePlayers, 0.01);
       async function homePlayers(){
         const response = await fetch("../analysis/home_line.json");
+        const num = await fetch("../analysis/home_Num.json");
         const players = await response.json();
+        const nump= await num.json();
+        let  playernum=nump;
         let home_players_data = players;
         // console.log(home_players_data);
         for (i = 0; i < home_players_data.length; i++) {
@@ -142,12 +148,12 @@ img.onerror = function(e) {
           var mySelect = document.getElementById("home_team_select");
           mySelect.setAttribute("size", mySelect.childElementCount);
           var newOption = document.createElement("option");
-          newOption.value = home_players_data[i];
+          newOption.value = playernum[i]+ ":"+home_players_data[i];
           // console.log(home_players_data[i]);
           if (typeof newOption.textContent === "undefined") {
-            newOption.innerText = home_players_data[i];
+            newOption.innerText = playernum[i]+ ":"+home_players_data[i] ;
           } else {
-            newOption.textContent = home_players_data[i];
+            newOption.textContent = playernum[i]+ ":"+home_players_data[i];
           }
           mySelect.appendChild(newOption);
         }
