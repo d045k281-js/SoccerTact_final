@@ -6,7 +6,7 @@ from pandas import json_normalize
 from mplsoccer import Pitch, VerticalPitch, FontManager
 from mplsoccer.statsbomb import read_event, EVENT_SLUG
 
-def lineup(m_id,t1, l_data):
+def lineup(m_id,t1, l_data, image):
     posToCoord = {
         '1' : [5,40],
         '2' : [13,67],
@@ -58,9 +58,42 @@ def lineup(m_id,t1, l_data):
                     posToCoord[str(variable['position_id'])][1]), fontsize=30, ha='center')
                     #ax2 = add_image(image, fig, left=0.054, bottom=0.84, width=0.08, interpolation='hanning')
     
-    fig.savefig('lineup.png', bbox_inches = 'tight')
+    plt.savefig('./public/analysis/'+image +'_taclineup.png', bbox_inches="tight")
+# import requests
+# import json
+# l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
+# l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
+# lineup('18245','Real Madrid', l_data)
+
+import sys
 import requests
 import json
-l_site = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/lineups/18245.json"
-l_data = json.loads((requests.get(l_site)).text, encoding="utf-8")
-lineup('18245','Real Madrid', l_data)
+from pandas import json_normalize
+
+m_id = str(sys.argv[1])
+#team_name = sys.argv[2]
+to_fetch = m_id+'.json'
+
+# e_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/events/"+to_fetch
+# e_data=open('/Users/deepak/Documents/SoccerTact_final/public/data/data/events/'+to_fetch, "r")
+with open('./public/data/data/events/'+to_fetch , encoding="utf-8") as e_site:
+    e_data = json.load(e_site)
+
+# l_site = "/Users/deepak/Documents/SoccerTact_final/public/data/data/lineups/"+to_fetch
+# l_data = json.loads((requests.get(l_site)).text)
+# l_data=open('/Users/deepak/Documents/SoccerTact_final/public/data/data/lineups/'+to_fetch, "r")
+with open('./public/data/data/lineups/'+to_fetch, encoding="utf-8") as l_site:
+    l_data = json.load(l_site)
+
+
+#getting the name of the teams
+df = json_normalize(l_data, sep = "_").assign(match_id = m_id)
+events = df.loc[df['match_id'] == m_id]
+t1 ='a'
+for i,event in events.iterrows():
+     if(t1=='a'):
+         t1 = event['team_name']
+     else:
+         t2 = event['team_name']
+lineup(m_id,t1, l_data, "t1")
+lineup(m_id,t2, l_data, "t2")

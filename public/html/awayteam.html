@@ -17,7 +17,7 @@
     <div class="print">
       <img style="margin-left: 0px; max-width: 20%;" src="../images/SoccerTact_logo.png">
       <div class="item">
-        <button class="back" onclick=window.history.go(-3)><b style="color: black;">Home</b> 
+        <button class="back" onclick=window.history.go(-1)><b style="color: black;">Home</b> 
       <i class="fa fa-long-arrow-left arrow1" aria-hidden="true"></i>
     </button>
       </div>
@@ -129,7 +129,7 @@
        setTimeout(awayply, 0);
 
         
-        img.src="../script/lineup.png";
+       img.src="../analysis/t2_taclineup.png";
         
 
 img.onload = function(e){
@@ -175,11 +175,12 @@ img.onerror = function(e) {
     var id= names["id"];
         var mySelect = document.getElementById('away_team_select');
         var namesteam=mySelect.options[mySelect.selectedIndex].value;
+        var playername=namesteam.split(":")[1];
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '/plyloading', true);
-        data.append('plyname',namesteam);
+        data.append('plyname',playername);
         data.append('id', id);
-        console.log(namesteam);
+        console.log(playername);
         xhr.send(data);
       } setTimeout(awayply, 0);
         window.location.href = "/plyloading";
