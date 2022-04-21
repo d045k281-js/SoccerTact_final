@@ -9,6 +9,7 @@ html {
 }
 body {
   background: url(../images/background.jpg) no-repeat center center fixed; 
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -50,12 +51,12 @@ text-align: center;
 #slideshow { 
   margin: 50px auto; 
   position: relative; 
-  width: 240px; 
-  height: 240px; 
+  width: 1000px; 
+  height: 300px; 
   padding: 10px; 
   box-shadow: 0 0 20px rgba(0,0,0,0.4); 
 }
-
+h1 { color: white; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
 #slideshow > div { 
   position: absolute; 
   top: 10px; 
@@ -63,29 +64,54 @@ text-align: center;
   right: 10px; 
   bottom: 10px; 
 }
-
+/* .element {
+  padding: 20px;
+  background-color: white;
+  color: #222;
+  margin: 50px auto 100px;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+} */
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body >
   <div id="slideshow">
-    <div>
-      WHAT IS SOCCER
+    <div class="element element-1" style=" height: 250px;">
+      <h1>Did you know? 
+        <br>
+        <ul>
+          More than 240 million people from over 200 countries play soccer!
+          </ul>
     </div>
-    <div>
-      SOMETHING SOMETHING
+    <div class="element element-1" style=" height: 250px;">
+      <h1>Did you know? 
+        <br>
+        <ul>
+          Until 1991, Soccer was an illegal sport in Mississippi?
+          </ul>
     </div>
-    <div>
-      Pretty cool eh? This slide is proof the content can be anything.
+    <div class="element element-1">
+      <h1>Did you know? 
+        <br>
+        <ul>
+         Over half of the world's population tuned in to watch the FIFA World Cup
+          </ul>
+      
     </div>
-  </div>
+  
 
+
+
+</div>
   <div  style="margin-top: 5%;" class="loader"></div>
+
 <script>
     setTimeout(() => {
         window.location.href = "/start"; 
-    }, 8000);
+    }, 5000);
 </script>
 <script>
   $("#slideshow > div:gt(0)").hide();

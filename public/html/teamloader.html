@@ -9,6 +9,7 @@ html {
 }
 body {
   background: url(../images/background.jpg) no-repeat center center fixed; 
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -50,12 +51,12 @@ text-align: center;
 #slideshow { 
   margin: 50px auto; 
   position: relative; 
-  width: 240px; 
-  height: 240px; 
+  width: 1000px; 
+  height: 300px; 
   padding: 10px; 
   box-shadow: 0 0 20px rgba(0,0,0,0.4); 
 }
-
+h1 { color: white; font-family: 'Helvetica Neue', sans-serif; font-size: 60px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
 #slideshow > div { 
   position: absolute; 
   top: 10px; 
@@ -72,31 +73,46 @@ $("#slideshow > div:gt(0)").hide();
 
 setInterval(function() { 
   $('#slideshow > div:first')
-  .fadeOut(1000)
+  .fadeOut(2000)
   .next()
-  .fadeIn(1000)
+  .fadeIn(2000)
   .end()
   .appendTo('#slideshow');
 }, 3000);
 </script>
-<div  style="margin-top: 30%;" class="loader"></div>
+
 <body >
-  <div id="slideshow">
+  <div id="slideshow" style="margin-top: 5%;" >
     <div>
-      <img src="//farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg">
+      <h1>Did you know? 
+      <br>
+      <ul>
+        More than 240 million people from over 200 countries play soccer!
+        </ul>
+
     </div>
     <div>
-      <img src="//farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
+      <h1>Did you know? 
+        <br>
+        <ul>
+          Once soccer was an illegal sport in Mississippi?
+          </ul>
     </div>
     <div>
-      Pretty cool eh? This slide is proof the content can be anything.
+      <h1>Did you know? 
+        <br>
+        <ul>
+          The word soccer comes from the slang word “association”. In earlier times, it was first called “socca.
+          </ul>
+      
+      <!-- Pretty cool eh? This slide is proof the content can be anything. -->
     </div>
   </div>
 
-
+  <div  style="margin-top: 8%;" class="loader"></div>
 <script>
     setTimeout(() => {
-        window.location.href = "/team"; 
+        // window.location.href = "/team"; 
     }, 8000);
 </script>
 </body>

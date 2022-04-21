@@ -4,11 +4,19 @@
       <base href="/"> 
       <link rel="stylesheet" href="../css/style.css">
       <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
-    
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" /> -->
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script> -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+      
+       <link rel=stylesheet href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
       <img style="display: flex; margin: 0px auto;" src="../images/SoccerTact_logo.png"><br><br>
+      
     </head>
 <body>
     
@@ -33,11 +41,17 @@
     <div class="content">
       <div class="selected">
         <br></br>
-          <select id ="mySelect" class="mySelect">
-            <option selected disabled style="text-align: center;"><b>Select match</b></option>
+        <input type="text"  list="mydatalist"  id ="mySelect" class="mySelect" placeholder="Select a match" style="text-align: center;">
+    <datalist id="mydatalist">
+      <!-- <option selected disabled style="text-align: center;"><b>Select match</b></option> -->
+      <option id="myoption"></option>
+    </datalist>
+          <!-- <select id ="mySelect" class="mySelect">
+           
           
             
-          </select><br><br>
+          </select><br><br> -->
+          <br><br>
           <span class="bp3-icon bp3-icon-double-caret-vertical"></span>
         </div>
         <button onclick="play()" class="play">Play</button>
@@ -65,6 +79,8 @@
         $('select').selectize({
             sortField: 'text'
         });
+  
+       
     });
 
   // to clear the selected value.
@@ -74,7 +90,7 @@
       var id=names[i]["match_id"]
       var teams=varhome+" vs "+varaway+" ,"+ id;
  //     console.log(id);
-      var mySelect = document.getElementById('mySelect');
+      var mySelect = document.getElementById('mydatalist');
         var newOption = document.createElement('option');
     
     newOption.value = teams;
@@ -101,8 +117,8 @@
      
       }
       function play(){
-      var mySelect = document.getElementById('mySelect');
-    var namesteam=mySelect.options[mySelect.selectedIndex].value;
+      var input = document.getElementById('mySelect');
+    var namesteam=input.value;
         console.log(namesteam.split(",")[1])
         console.log(namesteam);
          var hometeam =namesteam.split(" vs ")[0];
@@ -144,3 +160,8 @@ xhr.send(data);
 
 
 </html>
+<style>
+  #option{
+    font-size: 40px;
+  }
+</style>
