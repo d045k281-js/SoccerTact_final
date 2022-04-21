@@ -16,7 +16,7 @@
   
       <div class=”container”>
         <div class="print">
-          <a><img style="margin-left: 0px; max-width: 20%;" src="../images/SoccerTact_logo.png"></a>
+          <a href="/"><img style="margin-left: 0px; max-width: 30%;" src="../images/SoccerTact_logo.png"></a>
             <div class="item">
               <button class="back" onclick=window.history.go(-1)><b style="color: black;">Home</b> 
             <i class="fa fa-long-arrow-left arrow1" aria-hidden="true"></i>
@@ -39,7 +39,15 @@
                   <option style="background-color: red; color: white;"id="home_players" selected disabled>Home Team</option>
                   
                 </select>
-                
+                <br> <br>
+                <img class="passimg" src="../analysis/t1pn.png"  >
+                <h1 class="tags" style="margin-left: 27%;">Pass Network</h1>
+                <br> <br>
+                <img class="passimg" src="../analysis/t1_pressure.png" style="margin-top: 30%;">
+                <h1 class="tags" style="margin-left: 18%;">Pressure Heatmap</h1>
+                <br> <br>
+                <img class="passimg" src="../analysis/t1_duel.png" style="margin-top: 20%;">
+                <h1 class="tags" style="margin-left: 30%;">Duel HeatMap</h1>
                 </div>
         
                 
@@ -47,10 +55,22 @@
                    <div style="top:10%"> <img src="../analysis/t1_timeline.png" id="timeline" >
                    
                     </div>
-                    <img id="myImg" class="teamimg" ></div>
+                    <img id="myImg" class="teamimg" >
+                    <br> <br>
+                  <img class="passimg" src="../analysis/t1_pass.png" style="margin-left: 3%; margin-top: 10%;">
+                  <h1 class="tags" style="margin-left: 38%;">Pass Flow</h1>
+                  <br> <br>
+                  <img class="passimg" src="../analysis/t1_shot.png" style="margin-left: 3%; margin-top: 30%;">
+                  <h1 class="tags" style="margin-left: 38%;">Shot Map</h1>
+                  <br> <br>
+                
+                  <img class="passimg" src="../analysis/t1pass.png"style="margin-left: 3%; margin-top: 20%;">
+                  <h1 class="tags" style="margin-left: 30%;">Pass Heatmap</h1>
+                  </div>
+
                     
-                  <div class="analysis_buttons">
-                    <button style="width: 261px; height: 70px; margin-top: 25%;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
+                  <div class="analysis_buttons" style=" margin-bottom: 6%;">
+                    <button style="width: 261px; height: 70px;" class="pass" onclick="pass_flow()">Pass <b>Flow</b></button>
                     <button style="width: 261px; height: 70px;" class="five" onclick="Shot_map()">Shot <b>Map</b></button>
                     <button style="width: 261px; height: 70px;" class="heat" onclick="pass_heat()">Pass <b>Heatmap</b></button>
                     <button style="width: 261px; height: 70px;" class="network" onclick="pass_net()">Passing <b>Network</b></button>

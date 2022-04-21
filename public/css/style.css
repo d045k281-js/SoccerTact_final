@@ -5,10 +5,12 @@
 @media screen {
 html { 
   height:100%;
+ 
 }
 
 body {
   margin:0;
+  overflow: hidden;
 }
 
 .selectize{ 
@@ -191,14 +193,14 @@ select{
   /* <!-- border-radius: 25px; */
  }
  
-option {
+/* option {
   background-color: white;
   padding: 4px;
   color: blue;
   margin-bottom: 1px;
    font-size: 18px;
   cursor: pointer;
-}
+} */
 
  footer {
   text-align: left;

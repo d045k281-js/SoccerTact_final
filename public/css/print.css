@@ -227,7 +227,7 @@ body {
   width:500px;
   height: 400px;
   margin-top: 10%;
-  margin-left: 5%;
+  margin-left: 2%;
 
 }
 #timeline{
@@ -452,7 +452,7 @@ option{ border: 1px solid white;}
     size:50%; border: 2px solid black;
 }
 .myImg{
-
+  /* margin-left: 3%; */
     height: 90%; width:90%;
 }
 .myImg2{
